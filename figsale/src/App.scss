@@ -1,4 +1,6 @@
 $bar-color: #272838;
+$yellow: #F9D935;
+$yellow-opacity: rgba(249, 216, 52, 0.815);
 
 html, body {
   height: 100%;
@@ -12,4 +14,17 @@ html, body {
 a {
   text-decoration: none;
   color: #ffffff
+}
+
+button {
+  color: #000;
+  font-family: Orkney;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+#root {
+  color: #000;
+  font-family: Orkney;
+  font-weight: 700;
 }

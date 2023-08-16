@@ -2,6 +2,11 @@
 
 // mobile
 @media screen and (max-width: 949px) {
+
+  .navbar-bar {
+    height: 100px;
+    width: 100%;
+  }
   
   .logo {
     img {
@@ -13,7 +18,6 @@
 
   .navbar-account {
     width: 100vw;
-    height: 8vh;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -42,7 +46,7 @@
     background-color: bisque;
   }
 
-  .bm-burger-button {
+    .bm-burger-button {
     position: fixed;
     width: 36px;
     height: 30px;
@@ -172,6 +176,12 @@
 
   }
 
+  
+  .navbar-links {
+    align-items: center;
+    flex-direction: row;
+  }
+
   .navbar-account {
     width: 8vw;
     height: 100%;
@@ -193,12 +203,6 @@
 }
 
 .navbar-bar {
-  width: 100vw;
   display: flex;
   background: app.$bar-color;
-}
-
-.navbar-links {
-  align-items: center;
-  flex-direction: row;
 }

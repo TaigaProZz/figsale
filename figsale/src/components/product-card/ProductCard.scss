@@ -1,0 +1,87 @@
+@use 'src/App.scss' as app; 
+
+@media screen and (max-width: 949px) {
+  .new-products-carousel-card {
+    height: 350px;
+    width: 225px;
+    border-radius: 12px; 
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.27);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+}
+
+@media screen and (min-width: 950px) {
+  .new-products-carousel-card {
+    height: 350px;
+    width: 225px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.27);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+}
+.new-products-carousel-card-fav {
+  height: 10%;
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.new-products-carousel-card-image {
+  height: 40%;
+  width: 80%;
+  margin-top: 10px;
+  background-color: bisque;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.new-products-carousel-card-name {
+  height: 10%;
+  width: 100%;
+}
+
+.new-products-carousel-card-price {
+  display: flex;
+  justify-content: flex-end;
+  height: 10%;
+  width: 100%;
+  p {
+    // opacity on background
+    height: 100%;
+    width: 30%;
+    border-radius: 7px;
+    margin: 0;
+    padding: 0;
+    background-color: app.$yellow-opacity ;
+  }
+}
+
+.new-products-carousel-card-button {
+  height: 20%;
+  width: 100%;
+
+  button {
+    height: 60%;
+    width: 60%;
+    background-color: app.$yellow;
+    color: black;
+    border: none;
+    border-radius: 7px;
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

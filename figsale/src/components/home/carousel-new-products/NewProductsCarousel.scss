@@ -1,0 +1,110 @@
+@media screen and (max-width: 949px) {
+  .home-carousel-new-products {
+    height: 450px;
+    width: 100%;
+    padding-top: 10px;
+  
+    .swiper {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .home-carousel-new-products-container {
+    height: 100%;
+    width: 100%;
+  }
+
+  .home-carousel-new-products-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    height: 10%;
+
+    button {
+      height: 20px;
+    }
+  }
+
+  .home-carousel-new-products-swiper {
+    width: 100%;
+    height: 100%;
+  
+    .swiper-slide {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 1;
+    }
+  }
+  
+  .swiper-button-next:after, .swiper-button-prev:after {
+    font-family: swiper-icons;
+    font-size: var(--swiper-navigation-size);
+    text-transform: none!important;
+    letter-spacing: 0;
+    font-variant: initial;
+    line-height: 1;
+    color: #F9D935;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .home-carousel-new-products {
+    height: 500px;
+    width: calc(100% - 10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+    .swiper {
+      height: 90%;
+      width: 100%;
+      padding-left: 10px;
+    }
+  }
+
+  .home-carousel-new-products-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  
+  .home-carousel-new-products-title {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: 10%;
+
+    button {
+      height: 50px;
+    }
+  }
+
+  .home-carousel-new-products-swiper {
+    width: 85%;
+    height: 100%;
+  
+    .swiper-slide {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 1;
+    }
+  }
+
+  .swiper-button-next:after, .swiper-button-prev:after {
+    font-family: swiper-icons;
+    font-size: var(--swiper-navigation-size);
+    text-transform: none!important;
+    letter-spacing: 0;
+    font-variant: initial;
+    line-height: 1;
+    color: #F9D935;
+  }
+}

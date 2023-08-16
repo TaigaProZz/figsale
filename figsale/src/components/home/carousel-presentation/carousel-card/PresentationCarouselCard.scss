@@ -1,0 +1,32 @@
+@media screen and (max-width: 949px) {
+  .presentation-carousel-card {
+    height: 90%;
+    width: 100%;
+    border-radius: 12px; 
+  }
+  
+  .presentation-carousel-card-image {
+    height: 100%;
+    width: 100%;
+    img {
+      height: 100%;
+      width: 80%;
+    }
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .presentation-carousel-card {
+    height: 400px;
+    max-width: 800px;
+  }
+  
+  .presentation-carousel-card-image {
+    height: 100%;
+    width: 100%;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

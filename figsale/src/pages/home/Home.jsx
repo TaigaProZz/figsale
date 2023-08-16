@@ -1,15 +1,12 @@
-import Carousel from "../../components/home/carousel/Carousel.jsx";
+// import FeedbackCarousel from "../../components/home/carousel-feedback/FeedbackCarousel.jsx";
+import NewProductCarousel from "../../components/home/carousel-new-products/NewProductsCarousel.jsx";
+import PresentationCarousel from "../../components/home/carousel-presentation/PresentationFeedbackCarousel.jsx";
 
 function Home() {
     return (
       <div>
-        <Carousel />
-
-        <div className="home-news">
-        </div>
-
-        <div className="home-preorder">
-        </div>
+        <PresentationCarousel />
+        <NewProductCarousel />
       </div>
       
     )
