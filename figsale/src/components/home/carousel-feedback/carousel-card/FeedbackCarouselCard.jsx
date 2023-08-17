@@ -4,7 +4,7 @@ import { AiFillStar } from 'react-icons/ai'
 function FeedbackCarouselCard (props) {
   let stars = [];
   for(let i = 0; i < props.stars; i++) {
-    stars.push(<AiFillStar size={25} />);
+    stars.push(<AiFillStar key={i} size={25} />);
   };
 
 

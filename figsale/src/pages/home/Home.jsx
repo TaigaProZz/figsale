@@ -1,4 +1,4 @@
-// import FeedbackCarousel from "../../components/home/carousel-feedback/FeedbackCarousel.jsx";
+import './Home.scss';
 import PresentationCarousel from "../../components/home/carousel-presentation/PresentationFeedbackCarousel.jsx";
 import NewProductCarousel from "../../components/home/carousel-new-products/NewProductsCarousel.jsx";
 import PromoCarousel from "../../components/home/carousel-promo/PromoCarousel.jsx";
