@@ -39,15 +39,6 @@ function FeedbackCarousel () {
           grabCursor={true}
           centeredSlides={true}
           slidesPerView={'auto'}
-          effect={'coverflow'}
-          coverflowEffect={{
-            rotate: 10,
-            stretch: 100,
-            depth: 50,
-            modifier: 1,
-            slideShadows: true,
-            
-          }}
 
           // breakpoint
           breakpoints={{
@@ -67,7 +58,7 @@ function FeedbackCarousel () {
           >
           {feedbacks.map((feedback) => (
             <SwiperSlide key={feedback.id}>
-              <FeedbackCarouselCard name={feedback.name} text={feedback.message} rating={feedback.stars} />
+              <FeedbackCarouselCard name={feedback.name} message={feedback.message} stars={feedback.stars} />
             </SwiperSlide>
           ))}
           

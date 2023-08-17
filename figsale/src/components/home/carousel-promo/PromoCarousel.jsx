@@ -5,9 +5,9 @@ import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 import 'swiper/css/effect-coverflow';
-import './NewProductsCarousel.scss';
+import './PromoCarousel.scss';
 
-function NewProductCarousel () {
+function PromoCarousel () {
   const products = [
     {
       id: 1,
@@ -15,7 +15,7 @@ function NewProductCarousel () {
       alt: 'efefe',
       name: 'zoro',
       price: 100,
-      label: 1,
+      label: 2,
       fav: true
     },
     {
@@ -24,7 +24,7 @@ function NewProductCarousel () {
       alt: 'efefe',
       name: 'zoro',
       price: 100,
-      label: 1,
+      label: 2,
       fav: false
     },
     {   
@@ -33,7 +33,7 @@ function NewProductCarousel () {
       alt: 'efefe',
       name: 'zoro',
       price: 100,
-      label: 1,
+      label: 2,
       fav: true
     },
     {
@@ -42,7 +42,7 @@ function NewProductCarousel () {
       alt: 'efefe',
       name: 'zoro',
       price: 100,
-      label: 1,
+      label: 2,
       fav: false
     },
     {
@@ -51,7 +51,7 @@ function NewProductCarousel () {
       alt: 'efefe',
       name: 'zoro',
       price: 100,
-      label: 1,
+      label: 2,
       fav: true
     },
     {
@@ -60,19 +60,19 @@ function NewProductCarousel () {
       alt: 'efefe',
       name: 'zoro',
       price: 100,
-      label: 1,
+      label: 2,
       fav: false
     }
 
   ];
 
   return (
-    <div className='home-carousel-new-products'>
-      <div className='home-carousel-new-products-container'>
+    <div className='home-carousel-promo'>
+      <div className='home-carousel-promo-container'>
         
-        <div className='home-carousel-new-products-swiper'>
-          <div className='home-carousel-new-products-title'>
-            <h2>Nouveautés</h2>
+        <div className='home-carousel-promo-swiper'>
+          <div className='home-carousel-promo-title'>
+            <h2>Promotions</h2>
             <button>Voir tout</button>
           </div>
           <Swiper
@@ -95,4 +95,4 @@ function NewProductCarousel () {
   
 }
 
-export default NewProductCarousel;
+export default PromoCarousel;

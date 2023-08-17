@@ -1,37 +1,62 @@
 import './ProductCard.scss'
 import {HiOutlineHeart, HiHeart} from 'react-icons/hi'
 
-
 function ProductCard (props) {
   return (
     <div>
-      <div className='new-products-carousel-card'>
-        <div className='new-products-carousel-card-label'>
-          <p>{props.label}</p>
-        </div>
-        <div className='new-products-carousel-card-fav'>
-          {props.fav === true ?
-          <HiHeart size={30} color='red'/> :
-          <HiOutlineHeart size={30}/>}
+      <div className='product-card'>
+        {checkLabel(props) ? 
+          <div className='product-card-label'>
+            <p className='center'>{checkLabel(props)}</p>
+          </div> 
+        : null}
+
+        <div className='product-card-fav'>
+          {checkFav(props)}
         </div>
 
-        <div className="new-products-carousel-card-image">
+        <div className="product-card-image">
           {<img src={props.img} alt={props.alt}></img> }
         </div>
-        {/* make horizontal line  */}
         
-        <div className='new-products-carousel-card-name center'>
+        <div className='product-card-name center'>
           <p>{props.name}</p>
         </div>
-        <div className='new-products-carousel-card-price'>
+        <hr className='product-card-separator'/>
+        <div className='product-price'>
           <p className='center'>{props.price}€</p>
         </div>
-        <div className='new-products-carousel-card-button center'>
+        <div className='product-card-button center'>
           <button>Voir plus</button>
         </div>
       </div>
     </div>
   )
 }
+
+function checkFav (props) {
+  if (props.fav === true) {
+    return <HiHeart size={30} color='red'/>
+  } else {
+    return <HiOutlineHeart size={30}/>
+  }
+}
+
+function checkLabel (props) {
+  switch (props.label) {
+    case 0:
+      return null;
+    case 1:
+      return 'Nouveau';
+    case 2:
+      return 'Promo';
+    case 3:
+      return 'Précommande';
+    default:
+      return null; 
+  }
+}
+
+
 
 export default ProductCard;
