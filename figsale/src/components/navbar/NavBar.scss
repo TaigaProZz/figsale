@@ -130,8 +130,9 @@
 
     img {
       height: 100%;
-      width: 165px;
+      display: block;
       object-fit: cover;
+      object-position: center;
     }
    
   }

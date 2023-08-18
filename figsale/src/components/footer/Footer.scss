@@ -1,0 +1,105 @@
+@use 'src/App.scss' as app;
+
+@media screen and (max-width: 949px) {
+  .footer {
+    height: 101px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: app.$bar-color;
+    color: white;
+  } 
+
+  .footer-logo {
+    height: 100%;
+    width: 30%;
+    
+    img {
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .footer {
+    height: 130px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: app.$bar-color;
+    color: white;
+  }
+
+  .footer-logo {
+    height: 100%;
+    width: 30%;
+    
+    img {
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .footer-links {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-size: 16px;
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .footer-github {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    img {
+      margin-left: 5px;
+      height: 25px;
+    }
+  }
+
+  .footer-contact {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    button {
+      width: 260px;
+      height: 78px;
+      border-radius: 8px;
+      border: none;
+      background-color: app.$yellow;
+      font-size: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      span {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .footer-separator {
+    width: 1px;
+    background-color: white;
+    margin: 0 10px;
+  }
+}

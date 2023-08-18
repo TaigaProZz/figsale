@@ -32,11 +32,7 @@ function NavBar() {
 
       <main id="page-wrap"> 
         <div className="navbar-bar">
-          <div className="navbar-logo">
-            <div className='logo'>
-              <img src='/img/navbar-logo.png' alt="figsale logo" />
-            </div>
-          </div>
+          <img src='/img/navbar-logo.png' alt="figsale logo" />
           <div className="navbar-links">
             <Link to='/'>
               <h1>Accueil</h1>
