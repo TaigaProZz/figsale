@@ -8,6 +8,7 @@
     align-items: center;
     background-color: app.$bar-color;
     color: white;
+    font-size: 11px;
   } 
 
   .footer-logo {
@@ -23,9 +24,55 @@
   }
 
   .footer-links {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+      margin: 6px;
+      padding: 0;
+    }
+  }
+
+  .footer-separator {
+    display: none;
+  }
+
+  .footer-github {
+    height: 100%;
     display: flex;
     flex-direction: row;
+    img {
+      height: 20px;
+    }
   }
+
+  .footer-contact {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .footer-envelope {
+      font-size: 25px;
+    }
+
+    button {
+      width: 80%;
+      height: 78px;
+      border-radius: 8px;
+      border: none;
+      background-color: app.$yellow;
+      font-size: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+     
+    }
+  }
+
 }
 
 @media screen and (min-width: 950px) {
@@ -55,10 +102,11 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    align-items: center;
     font-size: 16px;
 
     p {
-      margin: 0;
+      margin: 0px 20px 0px 0px;
       padding: 0;
     }
   }
@@ -68,8 +116,12 @@
     flex-direction: row;
     align-items: center;
 
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
     img {
-      margin-left: 5px;
       height: 25px;
     }
   }
@@ -80,8 +132,12 @@
     align-items: center;
     justify-content: center;
 
+    .footer-envelope {
+      font-size: 35px;
+    }
+
     button {
-      width: 260px;
+      width: 80%;
       height: 78px;
       border-radius: 8px;
       border: none;
@@ -98,6 +154,7 @@
   }
 
   .footer-separator {
+    height: 30px;
     width: 1px;
     background-color: white;
     margin: 0 10px;

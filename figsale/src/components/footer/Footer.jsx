@@ -9,20 +9,20 @@ function Footer () {
       </div>
       <div className='footer-links'>
         <p>Mentions légales</p>
-        <hr className='footer-separator' />
+        {/* <hr className='footer-separator' /> */}
         <p>Garantie légale et assurance</p>
-        <hr className='footer-separator' />
+        {/* <hr className='footer-separator' /> */}
         <p>Gestion des cookies</p>
-        <hr className='footer-separator' />
+        {/* <hr className='footer-separator' /> */}
         <div className='footer-github'>
           <p>Site réalisé par Taiga ProZz</p>
-          <img src='/img/github-ico.png'></img>
+          <img src='/img/github-ico.png' alt='github icon'></img>
         </div>
       </div>
       <div className='footer-contact'>
         <button className='footer-contact-button'>
           <span>Nous contacter</span>
-          <FaEnvelope size={35}/>
+          <FaEnvelope className='footer-envelope'/>
         </button>
       </div>
     </div>
