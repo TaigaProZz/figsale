@@ -1,0 +1,17 @@
+@media screen and (max-width: 949px) {
+  .products-container {
+    min-height: calc(100vh - 201px);
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+}
+
+@media screen and (min-width: 950px) {
+  .products-container {
+    min-height: calc(100vh - 230px);
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+}

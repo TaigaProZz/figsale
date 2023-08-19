@@ -1,0 +1,73 @@
+@use 'src/App.scss' as app;
+
+@media screen and (max-width: 949px) {
+  .product-sort-container {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: bisque;
+  }
+  
+  .product-sort-shape {
+    width: 90%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    background-color: app.$bar-color;
+    color: white;
+  }
+
+  .product-sort-shape-title {
+    height: 10%;
+  }
+  
+  .product-sort-shape-price {
+    height: 10%;
+  }
+
+}
+
+@media screen and (min-width: 950px) {
+  .product-sort-container {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: bisque;
+  }
+  
+  .product-sort-shape {
+    width: 90%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    background-color: app.$bar-color;
+    color: white;
+  }
+
+  .product-sort-shape-title {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .product-sort-shape-price {
+    height: 10%;
+    margin-left: 10px;
+  }
+
+  
+  .product-sort-shape-price-input-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .product-sort-shape-price-input {
+    width: 30%;
+    height: 25px;
+    margin-left: 10px;
+  }
+  
+
+}

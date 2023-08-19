@@ -8,7 +8,7 @@
     width: 100%;
   }
   
-  .logo {
+  .burger-logo {
     img {
       height: 100%;
       width: 100%;
@@ -34,7 +34,7 @@
     }
   }
 
-  .navbar-links, .navbar-search, .navbar-logo {
+  .navbar-links, .navbar-search, .navbar-logo, .navbar-logo {
     display: none;
   }
 
@@ -118,7 +118,6 @@
   }
   
   .navbar-logo {
-    width: 15vw;
     height: 100%;
     background: linear-gradient(120deg, #F9D935 135px, rgba(249, 217, 53, 0.00) 0%);
     padding-left: 30px;
@@ -151,7 +150,7 @@
   }
 
   .navbar-search {
-    width: 35vw;
+    width: 30vw;
     display: flex;
     align-items: center;
 
