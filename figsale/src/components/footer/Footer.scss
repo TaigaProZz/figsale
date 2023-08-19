@@ -1,0 +1,162 @@
+@use 'src/App.scss' as app;
+
+@media screen and (max-width: 949px) {
+  .footer {
+    height: 101px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: app.$bar-color;
+    color: white;
+    font-size: 11px;
+  } 
+
+  .footer-logo {
+    height: 100%;
+    width: 30%;
+    
+    img {
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .footer-links {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+      margin: 6px;
+      padding: 0;
+    }
+  }
+
+  .footer-separator {
+    display: none;
+  }
+
+  .footer-github {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    img {
+      height: 20px;
+    }
+  }
+
+  .footer-contact {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .footer-envelope {
+      font-size: 25px;
+    }
+
+    button {
+      width: 80%;
+      height: 78px;
+      border-radius: 8px;
+      border: none;
+      background-color: app.$yellow;
+      font-size: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+     
+    }
+  }
+
+}
+
+@media screen and (min-width: 950px) {
+  .footer {
+    height: 130px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: app.$bar-color;
+    color: white;
+  }
+
+  .footer-logo {
+    height: 100%;
+    width: 30%;
+    
+    img {
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .footer-links {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 16px;
+
+    p {
+      margin: 0px 20px 0px 0px;
+      padding: 0;
+    }
+  }
+
+  .footer-github {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    img {
+      height: 25px;
+    }
+  }
+
+  .footer-contact {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .footer-envelope {
+      font-size: 35px;
+    }
+
+    button {
+      width: 80%;
+      height: 78px;
+      border-radius: 8px;
+      border: none;
+      background-color: app.$yellow;
+      font-size: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      span {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .footer-separator {
+    height: 30px;
+    width: 1px;
+    background-color: white;
+    margin: 0 10px;
+  }
+}

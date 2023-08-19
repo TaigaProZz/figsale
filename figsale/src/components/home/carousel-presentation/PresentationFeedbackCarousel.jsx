@@ -5,7 +5,7 @@ import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 import 'swiper/css/effect-coverflow';
-import PresentationCarouselCard from './carousel-card/PresentationCarouselCard';
+import PresentationCarouselCard from './card/PresentationCarouselCard';
 
 
 function PresentationCarousel () {
