@@ -22,7 +22,7 @@ function NavBar() {
         isOpen={ menuOpen }
         onStateChange={(state) => handleStateChange(state)}
         >
-        <div className='logo'>
+        <div className='burger-logo'>
           <img src="/img/burger-logo.png" alt="figsale logo" />
         </div>
         <Link to='/' className="menu-item" onClick={closeMenu}>Accueil</Link>
@@ -32,7 +32,7 @@ function NavBar() {
 
       <main id="page-wrap"> 
         <div className="navbar-bar">
-          <img src='/img/navbar-logo.png' alt="figsale logo" />
+          <img src='/img/navbar-logo.png' className='navbar-logo' alt="figsale logo" />
           <div className="navbar-links">
             <Link to='/'>
               <h1>Accueil</h1>
