@@ -27,7 +27,6 @@
   .navbar-user-logo {
     width: auto;
     height: 50%;
-
     img {
       height: 100%;
       width: auto;
@@ -39,14 +38,13 @@
   }
 
    /* BURGER MENU */
-  .burger  {
+  .burger {
     height: 10px;
     width: 20px;
     display: flex;
-    background-color: bisque;
   }
 
-    .bm-burger-button {
+  .bm-burger-button {
     position: fixed;
     width: 36px;
     height: 30px;
@@ -54,29 +52,24 @@
     top: 36px;
   }
   
-  /* Color/shape of burger icon bars */
   .bm-burger-bars {
-    background: #ffffff;
+    background: app.$font-color-bar;
   }
   
-  /* Position and sizing of clickable cross button */
   .bm-cross-button {
     height: 24px;
     width: 24px;
   }
   
-  /* Color/shape of close button cross */
   .bm-cross {
-    background: aliceblue;
+    background: app.$font-color-bar;
   }
   
-  // Sidebar wrapper styles
   .bm-menu-wrap {
     position: fixed;
     height: 100%;
   }
   
-  /* General sidebar styles */
   .bm-menu {
     background: app.$bar-color;
     padding: 2.5em 1.5em 0;
@@ -88,11 +81,10 @@
     fill: white;
   }
   
-  /* Wrapper for item list */
   .bm-item-list {
     display: flex;
     flex-direction: column;
-    color: aliceblue;
+    color: app.$font-color-bar;
   }
   
   /* Individual item */
@@ -101,9 +93,9 @@
     margin-bottom: 20px;
   }
 
-  .bm-item::hover, .bm-item::focus {
-    color: aliceblue;
-  }
+  // .bm-item::hover, .bm-item::focus {
+  //   color: rgb(255, 255, 255);
+  // }
 }
 
 // large screen
@@ -119,21 +111,19 @@
   
   .navbar-logo {
     height: 100%;
-    background: linear-gradient(120deg, #F9D935 135px, rgba(249, 217, 53, 0.00) 0%);
+    background: app.$bar-logo-gradiant;
     padding-left: 30px;
   }
 
   .logo {
     height: 100%;
     width: 100%;
-
     img {
       height: 100%;
       display: block;
       object-fit: cover;
       object-position: center;
     }
-   
   }
   
   .navbar-links {
@@ -153,7 +143,6 @@
     width: 30vw;
     display: flex;
     align-items: center;
-
     input {
       width: 600px;
       height: 40%;
@@ -162,21 +151,17 @@
       background-image: url(https://cdn2.hubspot.net/hubfs/4004166/bioticresearch_website_assets/images/search_icon.png);
       background-repeat: no-repeat;
       background-position: right center;
-      background-color: #fff;
-     
+      background-color: app.$white; 
     } 
     input::placeholder {
-      color: #000000;
+      color: app.$font-color;
       font-family: 'Orkney', sans-serif; 
       font-weight: bold;
       font-size: 16px;
-      
       padding-left: 10px;
     }
-
   }
 
-  
   .navbar-links {
     align-items: center;
     flex-direction: row;
@@ -193,13 +178,11 @@
   .navbar-user-logo {
     width: auto;
     height: 50%;
-
     img {
       height: 100%;
       width: auto;
     }
   }
-
 }
 
 .navbar-bar {

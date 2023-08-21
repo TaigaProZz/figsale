@@ -3,32 +3,30 @@ import {HiOutlineHeart, HiHeart} from 'react-icons/hi'
 
 function ProductCard (props) {
   return (
-    <div>
-      <div className='product-card'>
-        {checkLabel(props) ? 
-          <div className='product-card-label'>
-            <p className='center'>{checkLabel(props)}</p>
-          </div> 
-        : null}
+    <div className='product-card'>
+      {checkLabel(props) ? 
+        <div className='product-card-label'>
+          <p className='center'>{checkLabel(props)}</p>
+        </div> 
+      : null}
 
-        <div className='product-card-fav'>
-          {checkFav(props)}
-        </div>
+      <div className='product-card-fav'>
+        {checkFav(props)}
+      </div>
 
-        <div className="product-card-image">
-          {<img src={props.img} alt={props.alt}></img> }
-        </div>
-        
-        <div className='product-card-name center'>
-          <p>{props.name}</p>
-        </div>
-        <hr className='product-card-separator'/>
-        <div className='product-price'>
-          <p className='center'>{props.price}€</p>
-        </div>
-        <div className='product-card-button center'>
-          <button>Voir plus</button>
-        </div>
+      <div className="product-card-image">
+        {<img src={props.img} alt={props.alt}></img> }
+      </div>
+      
+      <div className='product-card-name center'>
+        <p>{props.name}</p>
+      </div>
+      <hr className='product-card-separator'/>
+      <div className='product-price'>
+        <p className='center'>{props.price}€</p>
+      </div>
+      <div className='product-card-button center'>
+        <button>Voir plus</button>
       </div>
     </div>
   )
@@ -56,7 +54,5 @@ function checkLabel (props) {
       return null; 
   }
 }
-
-
 
 export default ProductCard;

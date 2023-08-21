@@ -1,6 +1,17 @@
-$bar-color: #272838;
+$dark-blue: #272838;
 $yellow: #F9D935;
 $yellow-opacity: rgba(249, 216, 52, 0.815);
+$white: #ffffff;
+$black: #000000;
+
+$bar-color: $dark-blue;
+$background-color: $white;
+$button-color: $yellow;
+$font-color: $black;
+$font-color-bar: $white;
+$card-color: $white;
+$star-color: $yellow;
+$bar-logo-gradiant: linear-gradient(120deg, #F9D935 135px, rgba(249, 217, 53, 0.00) 0%);
 
 html, body {
   height: 100%;
@@ -8,23 +19,23 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: 'Orkney', sans-serif;
-  background-color: #F9F8F8;
+  background-color: $background-color;
 }
 
 a {
   text-decoration: none;
-  color: #ffffff
+  color: $font-color-bar;
 }
 
 button {
-  color: #000;
+  color: $font-color;
   font-family: Orkney;
   font-size: 16px;
   font-weight: 700;
 }
 
 #root {
-  color: #000;
+  color: $font-color;
   font-family: Orkney;
   font-weight: 700;
 }
@@ -34,4 +45,3 @@ button {
   justify-content: center;
   align-items: center;
 }
-

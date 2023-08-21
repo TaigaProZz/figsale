@@ -69,7 +69,6 @@ function PromoCarousel () {
   return (
     <div className='home-carousel-promo'>
       <div className='home-carousel-promo-container'>
-        
         <div className='home-carousel-promo-swiper'>
           <div className='home-carousel-promo-title'>
             <h2>Promotions</h2>
@@ -85,14 +84,12 @@ function PromoCarousel () {
               <SwiperSlide key={products.id}>
                 <ProductCard img={products.img} alt={products.alt} name={products.name} price={products.price} fav={products.fav} label={products.label}/>
               </SwiperSlide>
-            ))}
-            
+            ))}   
           </Swiper> 
         </div>
       </div>
     </div>
-  );
-  
+  ); 
 }
 
 export default PromoCarousel;
