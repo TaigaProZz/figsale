@@ -1,27 +1,40 @@
+@use 'src/App.scss' as app;
+
 @media screen and (max-width: 949px) {
   .products-list-container {
     min-height: 300px;
-    width: 40%;
+    width: 100%;
     display: flex;
     flex-direction: column;
   }
   
-  .products-list-title {
+  .products-list-header {
     margin: 0;
     padding: 0;
     margin-left: 12px;
+    h1, p{
+      margin: 15px 0 15px 0;
+      padding: 0;
+    }
+    button {
+      height: 30px;
+      width: 80px;
+      background-color: app.$button-color;
+      border: none;
+      border-radius: 8px;
+    }
   }
   
   .products-list-content {
     width: 100%;
     display: inline-flex;
     flex-wrap: wrap; 
+    margin-top: 40px;
   }
   
   .products-list-element {
-    margin-top: 25px;
+    margin: 25px 2vw;
     position: relative;
-    
     .product-card-label {
       left: -10px;
       top: -12px;
@@ -37,10 +50,17 @@
     flex-direction: column;
   }
   
-  .products-list-title {
+  .products-list-header {
     margin: 0;
     padding: 0;
     margin-left: 12px;
+    h1, p{
+      margin: 0 0 15px 0;
+      padding: 0;
+    }
+    button {
+      display: none;
+    }
   }
   
   .products-list-content {
@@ -50,9 +70,9 @@
   }
   
   .products-list-element {
-    margin: 25px 2.5vw;
+    margin: 25px 2vw;
     position: relative;
-    
+
     .product-card-label {
       left: -10px;
       top: -12px;

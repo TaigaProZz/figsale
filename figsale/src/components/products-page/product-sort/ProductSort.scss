@@ -3,7 +3,8 @@
 @media screen and (max-width: 949px) {
   .product-sort-container {
     width: 30%;
-    display: flex;
+    display: none;
+    position: absolute;
     justify-content: center;
     align-items: center;
     background-color: bisque;
@@ -51,19 +52,68 @@
     justify-content: center;
   }
 
-  .product-sort-shape-price {
-    height: 10%;
-    margin-left: 10px;
+  .product-sort-price-container {
+    height: 15%;
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .product-sort-shape-price-input-container {
+  .product-sort-price-slider-container {
+    width: 100%;
     display: flex;
+    justify-content: center;
     flex-direction: row;
+    p {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
   }
 
-  .product-sort-shape-price-input {
-    width: 30%;
-    height: 25px;
-    margin-left: 10px;
+  .product-sort-licence-container {
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-sort-licence-select-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    select {
+      width: 80%;
+      height: 25px;
+    }
+  }
+
+  .product-sort-size-container {
+    height: 15%;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-sort-size-select-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    select {
+      width: 80%;
+      height: 25px;
+    }
+  }
+
+  .price-slider {
+    width: 80%;
+    height: 10%;
+  }
+
+  .slider-selection {
+    width: 20px;
+    height: 10%;
   }
 }
