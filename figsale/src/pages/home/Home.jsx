@@ -6,18 +6,16 @@ import PreorderCarousel from "../../components/home/carousel-preorder/PreorderCa
 import FeedbackCarousel from "../../components/home/carousel-feedback/FeedbackCarousel.jsx";
 
 function Home() {
-    return (
-      <div>
-        <PresentationCarousel />
-        <NewProductCarousel />
-        <PromoCarousel />
-        <PreorderCarousel />
-        <hr className='feedback-separator'/>
-        <FeedbackCarousel />
-
-      </div>
-      
-    )
+  return (
+    <div>
+      <PresentationCarousel />
+      <NewProductCarousel />
+      <PromoCarousel />
+      <PreorderCarousel />
+      <hr className='feedback-separator'/>
+      <FeedbackCarousel />
+    </div>  
+  )
 }
 
 export default Home;

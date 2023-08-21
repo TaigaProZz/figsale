@@ -1,3 +1,5 @@
+@use 'src/App.scss' as app;
+
 @media screen and (max-width: 949px) {
   .home-carousel-preorder {
     height: 450px;
@@ -51,7 +53,7 @@
     letter-spacing: 0;
     font-variant: initial;
     line-height: 1;
-    color: #F9D935;
+    color: app.$button-color;
   }
 }
 
@@ -113,6 +115,6 @@
     letter-spacing: 0;
     font-variant: initial;
     line-height: 1;
-    color: #F9D935;
+    color: app.$button-color;
   }
 }

@@ -21,7 +21,7 @@ function NavBar() {
         outerContainerId={ "outer-container" } 
         isOpen={ menuOpen }
         onStateChange={(state) => handleStateChange(state)}
-        >
+      >
         <div className='burger-logo'>
           <img src="/img/burger-logo.png" alt="figsale logo" />
         </div>
@@ -56,7 +56,6 @@ function NavBar() {
           </div>
         </div>
       </main>
-      
     </div>
   )
 }

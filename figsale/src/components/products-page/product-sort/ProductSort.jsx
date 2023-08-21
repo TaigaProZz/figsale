@@ -19,7 +19,6 @@ function Sort () {
               <input className='product-sort-shape-price-input' type='number' placeholder='€' />
             </div>
           </div>
-         
         </div>
       </div>
     </div>
