@@ -7,7 +7,7 @@ import FeedbackCarousel from "../../components/home/carousel-feedback/FeedbackCa
 
 function Home() {
   return (
-    <div>
+    <div className='home-page'>
       <PresentationCarousel />
       <NewProductCarousel />
       <PromoCarousel />
