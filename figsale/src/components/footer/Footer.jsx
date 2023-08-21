@@ -5,7 +5,7 @@ function Footer () {
   return (
     <div className='footer'>
       <div className='footer-logo'>
-        <img src='/img/navbar-logo.png' alt='figsale logo' />
+        <img src='/img/burger-logo.png' alt='figsale logo' />
       </div>
       <div className='footer-links'>
         <p>Mentions légales</p>
