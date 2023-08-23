@@ -1,0 +1,154 @@
+@use 'src/App.scss' as app;
+
+@media screen and (max-width: 949px) {
+  .login-form-container {
+    min-height: calc(100vh - 230px);
+    width: 100%;
+  }
+
+  .login-header {
+    height: 250px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    img {
+      height: 100%;
+      max-width: 100%;
+      width: 350px;
+    }
+  }
+
+  .login-form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+
+  .login-form {
+    width: 50vw;
+    padding: 50px;
+    background-color: app.$bar-color;
+    color: app.$font-color-bar;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+    border-radius: 8px;
+    button, input, textarea {
+      margin: 0;
+      padding: 0;
+      border: none;
+      border-radius: 8px;
+    }
+    label {
+      margin-bottom: 5px;
+    }
+    input {
+      height: 20px;
+      width: 100%;
+      padding: 10px 10px 10px 10px;
+      margin-bottom: 20px;
+    }
+    textarea {
+      height: 180px;
+      width: 100%;
+      padding: 10px 10px 10px 10px;
+      font-family: 'Orkney', sans-serif;
+      margin-bottom: 20px;
+    }
+    button {
+      height: 45px;
+      width: 40%;
+      background-color: app.$button-color;
+    }
+  }
+
+  .login-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    button {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .login-container {
+    min-height: calc(100vh - 230px);
+    width: 100%;
+    margin-top: 100px;
+  }
+
+  .login-header {
+    height: 250px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    img {
+      height: 100%;
+      width: 350px;
+    }
+  }
+
+  .login-form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+
+  .login-form {
+    width: 400px;
+    padding: 40px;
+    background-color: app.$bar-color;
+    color: app.$font-color-bar;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    border-radius: 8px;
+    button, input, textarea {
+      margin: 0;
+      padding: 0;
+      border: none;
+      border-radius: 8px;
+    }
+    label {
+      margin-bottom: 5px;
+    }
+    input {
+      height: 30px;
+      width: 100%;
+      padding-left: 10px;
+      margin-bottom: 20px;
+    }
+    textarea {
+      height: 180px;
+      width: 100%;
+      padding: 10px 0px 0px 10px;
+      font-family: 'Orkney', sans-serif;
+      margin-bottom: 20px;
+    }
+    button {
+      height: 45px;
+      width: 40%;
+      background-color: app.$button-color;
+    }
+  }
+
+  .login-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    button {
+      width: 60%;
+    }
+  }
+}

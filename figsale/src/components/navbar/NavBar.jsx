@@ -51,7 +51,10 @@ function NavBar() {
           </div>
           <div className="navbar-account">
             <div className='navbar-user-logo'>
-              <img src='/img/user.png' alt='user'></img>
+              <Link to='/login'>
+                <img src='/img/user.png' alt='user'></img>
+              </Link>
+
             </div>
           </div>
         </div>
