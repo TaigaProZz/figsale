@@ -1,0 +1,26 @@
+.account-container {
+  height: calc(100% - 20px);
+  width: calc(100% - 20px);
+  padding: 10px;
+  h1, h2, p {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.account-content {
+  margin-top: 20px;
+}
+
+.account-content-item-content {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  input {
+    height: 30px;
+    width: 60%;
+    border: 0.5px solid rgb(213, 213, 213);
+    border-radius: 8px;
+    background-color: rgb(230, 230, 230);
+  }
+}
