@@ -35,11 +35,14 @@ function Favorite () {
   return (
   <div className='messages-container'>
     <table>
+      <thead>
         <tr>
           <th>Produit</th>
           <th>Date d'ajout en favori</th>
           <th>Disponibilité</th>
         </tr>
+      </thead>
+      <tbody>
         {favorite.map((favorite) => {
           return (
             <tr key={favorite.id} onClick={() => handleClick(favorite)}>
@@ -49,6 +52,7 @@ function Favorite () {
             </tr>
           );
         })}
+      </tbody>
     </table>
   </div>
   );

@@ -39,12 +39,15 @@ function Messages () {
   return (
   <div className='messages-container'>
     <table>
+      <thead>
         <tr>
           <th>Sujet</th>
           <th>Id de la demande</th>
           <th>Dernière mise à jour</th>
           <th>Statut</th>
         </tr>
+      </thead>
+      <tbody>
         {message.map((message) => {
           return (
             <tr key={message.id} onClick={() => handleClick(message)}>
@@ -55,6 +58,7 @@ function Messages () {
             </tr>
           );
         })}
+      </tbody>
     </table>
   </div>
   );
