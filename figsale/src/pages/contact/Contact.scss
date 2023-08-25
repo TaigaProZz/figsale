@@ -1,10 +1,6 @@
 @use 'src/App.scss' as app;
 
 @media screen and (max-width: 949px) {
-  .contact-form-container {
-    min-height: calc(100vh - 230px);
-    width: 100%;
-  }
 
   .contact-header {
     height: 250px;
@@ -19,6 +15,7 @@
   }
 
   .contact-form-container {
+    height: 500px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -28,8 +25,9 @@
   }
 
   .contact-form {
-    width: 240px;
-    padding: 50px;
+    width: 80%;
+    max-width: 300px;
+    padding: 20px;
     background-color: app.$bar-color;
     color: app.$font-color-bar;
     display: flex;
@@ -47,20 +45,23 @@
     }
     input {
       height: 20px;
+      max-width: 300px;
       width: 100%;
-      padding: 10px 10px 10px 10px;
+      padding: 3px;
       margin-bottom: 20px;
     }
     textarea {
       height: 180px;
+      max-width: 300px;
       width: 100%;
-      padding: 10px 10px 10px 10px;
+      padding: 3px;
       font-family: 'Orkney', sans-serif;
       margin-bottom: 20px;
     }
     button {
       height: 45px;
-      width: 40%;
+      max-width: 40%;
+      width: 60%;
       background-color: app.$button-color;
     }
   }
