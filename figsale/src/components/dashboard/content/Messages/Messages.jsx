@@ -30,6 +30,20 @@ function Messages () {
       lastUpdate: '01/01/2021',
       status: '2',
     },
+    {
+      id: 5,
+      productId: 1,
+      subject: 'ub long sujet pour tester la taille du tablau',
+      lastUpdate: '01/01/2021',
+      status: '2',
+    },
+    {
+      id: 6,
+      productId: 1,
+      subject: 'ub long sujet pour tester la taille du tablau',
+      lastUpdate: '01/01/2021',
+      status: '2',
+    },
   ]
 
   const handleClick = (message) => {

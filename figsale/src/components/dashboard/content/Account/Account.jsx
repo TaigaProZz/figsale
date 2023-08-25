@@ -1,11 +1,6 @@
-import { useEffect } from 'react';
 import './Account.scss';
 
 function Account ({ user }) {
-  useEffect(() => {
-    console.log('user changed: ', user.user);
-  }, [user]);
-
   return (
   <div className='account-container'>
     <div className='account-header'>
