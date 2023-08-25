@@ -3,6 +3,9 @@ import React, { useEffect, useState } from 'react';
 import Account from '../../components/dashboard/content/Account/Account';
 import Messages from '../../components/dashboard/content/Messages/Messages';
 import Favorite from '../../components/dashboard/content/Favorite/Favorite';
+import AdminMessage from '../../components/dashboard/content/Admin/Messages/Messages';
+import AdminProducts from '../../components/dashboard/content/Admin/Products/Products';
+import AdminUsers from '../../components/dashboard/content/Admin/Users/Users';
 
 function Dashboard(user) {
   const [selectedMenuItem, setSelectedMenuItem] = useState('');
@@ -15,33 +18,33 @@ function Dashboard(user) {
 
   const MENU_ITEMS = {
     'ACCOUNT': {
-      name: 'Compte',
+      name: 'Mon compte',
       component : <Account user={user}/>,
       isAdmin: false  
     },
     'MESSAGES': {
-      name: 'Messages',
+      name: 'Mes messages',
       component : <Messages />,
       isAdmin: false
     },
     'FAVORITE': {
-      name: 'Favoris',
+      name: 'Mes favoris',
       component : <Favorite />,
       isAdmin: false
     },
     'ADMIN_MESSAGE': {
       name: 'Gestion des messages',
-      component :'admin_messages',
+      component : <AdminMessage />,
       isAdmin: true
     },
     'ADMIN_PRODUCT': {
       name: 'Gestion des produits',
-      component :'admin_products',
+      component : <AdminProducts />,
       isAdmin: true
     },
     'ADMIN_USER': {
       name: 'Gestion des utilisateurs',
-      component :'admin_users',
+      component : <AdminUsers />,
       isAdmin: true
     }
   };

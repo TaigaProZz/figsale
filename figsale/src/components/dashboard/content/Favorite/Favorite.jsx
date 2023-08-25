@@ -1,5 +1,3 @@
-import './Favorite.scss';
-
 function Favorite () {
   const favorite = [
     {
@@ -33,7 +31,7 @@ function Favorite () {
   };
 
   return (
-  <div className='messages-container'>
+  <div className='table-container'>
     <table>
       <thead>
         <tr>

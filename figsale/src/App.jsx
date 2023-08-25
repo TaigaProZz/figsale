@@ -1,5 +1,6 @@
 import './App.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import Home from './pages/home/Home';
 import NavBar from './components/navbar/NavBar';
 import Products from './pages/products/Products';
@@ -7,10 +8,9 @@ import Contact from './pages/contact/Contact';
 import Footer from './components/footer/Footer';
 import Login from './pages/login/Login';
 import Dashboard from './pages/dashboard/Dashboard';
-import { useEffect, useState } from 'react';
 
 function App() {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({email: '', isAdmin: false});
 
   const getUser = () => {
     try {
