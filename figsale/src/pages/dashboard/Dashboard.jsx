@@ -7,6 +7,10 @@ import Favorite from '../../components/dashboard/content/Favorite/Favorite';
 function Dashboard(user) {
   const [selectedMenuItem, setSelectedMenuItem] = useState('account');
 
+  if (!user || Object.keys(user).length === 0) {
+    return <div>Loading...</div>; 
+  }
+
   const handleMenuItemClick = (menuItem) => {
     setSelectedMenuItem(menuItem);
   };

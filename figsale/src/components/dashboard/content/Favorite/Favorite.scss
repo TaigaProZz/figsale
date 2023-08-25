@@ -1,9 +1,32 @@
-.favorite.container {
-  height: calc(100% - 20px);
-  width: calc(100% - 20px);
-  padding: 10px;
+.favorite-container {
+  height: 100%;
+  width: 100%;
+
 }
 
-.favorite-content {
-  margin-top: 40px;
+table {
+  width: 100%;
+}
+
+th {
+  border-bottom: 1px solid black;
+}
+
+td {
+  height: 120px;
+  text-align: center;
+  font-weight: 100;
+  cursor: pointer;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+table tr:nth-child(odd) td{
+  background-color: rgb(255, 255, 255);
+}
+table tr:nth-child(even) td{
+  background-color: rgb(236, 236, 236);
 }

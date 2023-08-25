@@ -1,5 +1,47 @@
 @use 'src/App.scss' as app;
 
+@media screen and (max-width: 949px) {
+  .dashboard-container {
+    min-height: calc(100vh - 230px);
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .dashboard-header {
+    height: 150px;
+    width: 100%;    
+    display: flex;
+    justify-content: center;
+    img {
+      height: 100%;
+      max-width: 200px;
+      width: 100%;
+    }  }
+
+  .dashboard-main-container {
+    height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dashboard-menu {
+    display: none;
+  }
+
+  .dashboard-menu-item {
+    cursor: pointer;
+  }
+
+  .dashboard-content-container {
+    height: 100%;
+    width: 90%;
+    overflow-y: auto;
+    box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.27);
+  }
+}
+
 @media screen and (min-width: 950px) {
   .dashboard-container {
     min-height: calc(100vh - 230px);
