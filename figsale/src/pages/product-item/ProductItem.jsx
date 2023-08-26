@@ -2,12 +2,11 @@ import 'react-medium-image-zoom/dist/styles.css'
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
-import 'swiper/css/thumbs';
 import './ProductItem.scss';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Thumbs, FreeMode} from 'swiper/modules';
+import { Navigation, Pagination, FreeMode} from 'swiper/modules';
 import Zoom from 'react-medium-image-zoom'
 
 function ProductItem() {
@@ -55,6 +54,7 @@ function ProductItem() {
           <Swiper
             onSwiper={setMainSwiper}
             navigation = {true}
+            pagination = {true}
             modules={[Navigation, Pagination, FreeMode]}
             onSlideChange={handleMainSwiperSlideChange}
           >
