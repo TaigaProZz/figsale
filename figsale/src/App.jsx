@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Home from './pages/home/Home';
 import NavBar from './components/navbar/NavBar';
 import Products from './pages/products/Products';
+import ProductItem from './pages/product-item/ProductItem';
 import Contact from './pages/contact/Contact';
 import Footer from './components/footer/Footer';
 import Login from './pages/login/Login';
@@ -30,10 +31,11 @@ function App() {
       <NavBar />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='products' element={<Products />} />
-        <Route path='contact' element={<Contact />} />
-        <Route path='login' element={<Login setUser={setUser}/>} />
-        <Route path='dashboard' element={<Dashboard user={user} setUser={setUser} />} />
+        <Route path='/products' element={<Products />} />
+        <Route path='/product/:id' element={<ProductItem />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/login' element={<Login setUser={setUser}/>} />
+        <Route path='/dashboard' element={<Dashboard user={user} setUser={setUser} />} />
       </Routes>
       <Footer />
     </BrowserRouter>

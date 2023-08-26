@@ -118,44 +118,44 @@ function Products() {
   };
  
   return (
-  <div className='table-container'>
-    <table>
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th></th>
-          <th>Nom</th>
-          <th>Prix</th>
-          <th>Statut</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        {products.map((product) => {
-          return (
-            <tr key={product.id}>
-              <td>{product.id}</td>
-              <td><img src={product.img} alt={product.alt}></img></td>
-              <td>{product.name}</td>
-              <td>{product.price}</td>
-              <td>
-                <select defaultValue={product.label}>
-                  {labels.map((label) => { 
-                    return (
-                      <option key={label.value} value={label.value}>{label.label}</option>
-                    );
-                  })}
-                </select>
-              </td>
-              <td>
-                <button onClick={() => handleSave()}>Sauvegarder</button>
-              </td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
-  </div>
+    <div className='table-container'>
+      <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th></th>
+            <th>Nom</th>
+            <th>Prix</th>
+            <th>Statut</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map((product) => {
+            return (
+              <tr key={product.id}>
+                <td>{product.id}</td>
+                <td><img src={product.img} alt={product.alt}></img></td>
+                <td>{product.name}</td>
+                <td>{product.price}</td>
+                <td>
+                  <select defaultValue={product.label}>
+                    {labels.map((label) => { 
+                      return (
+                        <option key={label.value} value={label.value}>{label.label}</option>
+                      );
+                    })}
+                  </select>
+                </td>
+                <td>
+                  <button onClick={() => handleSave()}>Sauvegarder</button>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
   );
 }
 

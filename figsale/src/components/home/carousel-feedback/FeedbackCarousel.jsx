@@ -1,10 +1,9 @@
 import './FeedbackCarousel.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, EffectCoverflow} from 'swiper/modules';
+import { Navigation, Pagination} from 'swiper/modules';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
-import 'swiper/css/effect-coverflow';
 import FeedbackCarouselCard from './card/FeedbackCarouselCard';
 
 
@@ -43,7 +42,7 @@ function FeedbackCarousel () {
       </div>
       <div className='home-carousel-feedback-swiper center'>
         <Swiper
-          modules={[Navigation, Pagination, EffectCoverflow]}
+          modules={[Navigation, Pagination]}
           navigation={true}
           slidesPerView={'auto'}
           grabCursor={true}

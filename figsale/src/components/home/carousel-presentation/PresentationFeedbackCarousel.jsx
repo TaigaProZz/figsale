@@ -1,10 +1,9 @@
 import './PresentationCarousel.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, EffectCoverflow} from 'swiper/modules';
+import { Navigation, Pagination} from 'swiper/modules';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
-import 'swiper/css/effect-coverflow';
 import PresentationCarouselCard from './card/PresentationCarouselCard';
 
 
@@ -31,7 +30,7 @@ function PresentationCarousel () {
     <div className='home-carousel-announce'>
       <div className='home-carousel-announce-swiper'>
         <Swiper
-          modules={[Navigation, Pagination, EffectCoverflow]}
+          modules={[Navigation, Pagination]}
           navigation = {true}
           grabCursor={true}
           slidesPerView={1}

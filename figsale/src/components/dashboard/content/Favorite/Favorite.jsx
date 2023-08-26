@@ -6,7 +6,7 @@ function Favorite () {
       productId: 1,
       productImg: 'img/user.png',
       addDate: '01/01/2021',
-      status: '1',
+      isFav: 0,
     },
     {
       id: 2,
@@ -14,7 +14,7 @@ function Favorite () {
       productId: 1,
       productImg: 'img/user.png',
       addDate: '01/01/2021',
-      status: '1',
+      isFav: 1,
     },
     {
       id: 3,
@@ -22,7 +22,7 @@ function Favorite () {
       productId: 1,
       productImg: 'img/user.png',
       addDate: '01/01/2021',
-      status: '1',
+      isFav: 1,
     },
   ]
 
@@ -31,40 +31,29 @@ function Favorite () {
   };
 
   return (
-  <div className='table-container'>
-    <table>
-      <thead>
-        <tr>
-          <th>Produit</th>
-          <th>Date d'ajout en favori</th>
-          <th>Disponibilité</th>
-        </tr>
-      </thead>
-      <tbody>
-        {favorite.map((favorite) => {
-          return (
-            <tr key={favorite.id} onClick={() => handleClick(favorite)}>
-              <td><img src={favorite.productImg} alt={favorite.productName}></img></td>
-              <td>{favorite.addDate}</td>
-              <td>{displayDisponibility(favorite.status)}</td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+    <div className='table-container'>
+      <table>
+        <thead>
+          <tr>
+            <th>Produit</th>
+            <th>Date d'ajout en favori</th>
+            <th>Favori</th>
+          </tr>
+        </thead>
+        <tbody>
+          {favorite.map((favorite) => {
+            return (
+              <tr key={favorite.id} onClick={() => handleClick(favorite)}>
+                <td><img src={favorite.productImg} alt={favorite.productName}></img></td>
+                <td>{favorite.addDate}</td>
+                <td>{favorite.isFav ? <p>oui</p> : <p>non</p>}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
   </div>
   );
-}
-
-function displayDisponibility(disponibility) {
-  switch (disponibility) {
-    case '1':
-      return 'Disponible';
-    case '2':
-      return 'Non disponible';
-    default:
-      return null;
-  }
 }
 
 export default Favorite;

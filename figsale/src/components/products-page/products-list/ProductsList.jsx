@@ -1,5 +1,6 @@
 import './ProductsList.scss';
 import ProductCard from '../../product-card/ProductCard';
+import { Link } from 'react-router-dom';
 
 function ProductsList() {
   const products = [
@@ -109,7 +110,9 @@ function ProductsList() {
       <div className='products-list-content'>
         {products.map((product) => (
           <div className='products-list-element' key={product.id}>
-            <ProductCard  img={product.img} alt={product.alt} name={product.name} price={product.price} fav={product.fav} label={product.label}/>
+            <Link to={'/product/'+ product.id}>
+              <ProductCard img={product.img} alt={product.alt} name={product.name} price={product.price} fav={product.fav} label={product.label}/>
+            </Link>
           </div>
         ))}
       </div>

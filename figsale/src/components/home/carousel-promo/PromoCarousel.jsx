@@ -1,10 +1,9 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, EffectCoverflow} from 'swiper/modules';
+import { Navigation, Pagination} from 'swiper/modules';
 import ProductCard from '../../product-card/ProductCard';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
-import 'swiper/css/effect-coverflow';
 import './PromoCarousel.scss';
 
 function PromoCarousel () {
@@ -75,7 +74,7 @@ function PromoCarousel () {
             <button>Voir tout</button>
           </div>
           <Swiper
-            modules={[Navigation, Pagination, EffectCoverflow]}
+            modules={[Navigation, Pagination]}
             navigation = {true}
             spaceBetween={10}
             slidesPerView='auto'
