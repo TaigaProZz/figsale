@@ -19,7 +19,7 @@ function ProductCard (props) {
       </div>
       
       <div className='product-card-name center'>
-        <p>{props.name}</p>
+        <p>{props.title}</p>
       </div>
       <hr className='product-card-separator'/>
       <div className='product-price'>

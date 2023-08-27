@@ -2,102 +2,43 @@ import './ProductsList.scss';
 import ProductCard from '../../product-card/ProductCard';
 import { Link } from 'react-router-dom';
 
-function ProductsList() {
-  const products = [
-    {
-      id: 1,
-      img: 'https://www.nautiljon.com/images/perso/00/66/elizabeth_liones_10866.webp',
-      alt: 'efefe',
-      name: 'zoro',
-      price: 100,
-      label: 2,
-      fav: true
-    },
-    {
-      id: 2,
-      img: '/img/banner.jpg',
-      alt: 'efefe',
-      name: 'zoro',
-      price: 100,
-      label: 2,
-      fav: false
-    },
-    {   
-      id: 3,
-      img: '/img/banner.jpg',
-      alt: 'efefe',
-      name: 'zoro',
-      price: 100,
-      label: 2,
-      fav: true
-    },
-    {
-      id: 4,
-      img: '/img/banner.jpg',
-      alt: 'efefe',
-      name: 'zoro',
-      price: 100,
-      label: 2,
-      fav: false
-    },
-    {
-      id: 5,
-      img: '/img/banner.jpg',
-      alt: 'efefe',
-      name: 'zoro',
-      price: 100,
-      label: 2,
-      fav: true
-    },
-    {
-      id: 6,
-      img: '/img/banner.jpg',
-      alt: 'efefe',
-      name: 'zoro',
-      price: 100,
-      label: 2,
-      fav: false
-    },
-    {
-      id: 7,
-      img: '/img/banner.jpg',
-      alt: 'efefe',
-      name: 'zoro',
-      price: 100,
-      label: 2,
-      fav: false
-    },
-    {
-      id: 8,
-      img: '/img/banner.jpg',
-      alt: 'efefe',
-      name: 'zoro',
-      price: 100,
-      label: 2,
-      fav: false
-    },
-    {
-      id: 9,
-      img: '/img/banner.jpg',
-      alt: 'efefe',
-      name: 'zoro',
-      price: 100,
-      label: 3,
-      fav: false
-    },
-    {
-      id: 10,
-      img: '/img/banner.jpg',
-      alt: 'efefe',
-      name: 'zoro',
-      price: 100,
-      label: 1,
-      fav: false
-    }
-  ];
+function ProductsList(props) {
+  const products = props.products;
+  const images = props.images;
   
   const openFilter = () => {
     console.log('open filter');
+  }
+
+  const getFirstImage = (product) => {
+    const image = images.find((image) => image.product_id === product.id);
+    if (image) {
+      const imageArray = JSON.parse(image.images);
+      return imageArray.length > 0 ? imageArray[0] : null;
+    }
+    return null;
+  }
+
+  const path = "https://figsale.s3.fr-par.scw.cloud/images/";
+  const imageList = products.map((product) => {   
+    return (
+      <Link to={'/products/' + product.id} key={product.id}>
+        <div className='products-list-element'>    
+          <ProductCard
+            img={path + getFirstImage(product)}
+            alt={product.alt}
+            title={product.title}
+            price={product.price}
+            fav={product.fav}
+            label={product.label}
+          />
+        </div>
+      </Link>
+    );
+  })
+  
+  if (!products.length || !images.length) {
+    return <div>Loading...</div>;
   }
 
   return (
@@ -108,13 +49,7 @@ function ProductsList() {
         <button className='products-list-header-btn' onClick={openFilter}>Filtrer</button>
       </div>
       <div className='products-list-content'>
-        {products.map((product) => (
-          <div className='products-list-element' key={product.id}>
-            <Link to={'/product/'+ product.id}>
-              <ProductCard img={product.img} alt={product.alt} name={product.name} price={product.price} fav={product.fav} label={product.label}/>
-            </Link>
-          </div>
-        ))}
+        {imageList}
       </div>
     </div>
   )

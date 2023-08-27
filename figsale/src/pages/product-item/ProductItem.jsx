@@ -8,14 +8,14 @@ import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, FreeMode} from 'swiper/modules';
 import Zoom from 'react-medium-image-zoom'
+import axios from 'axios';
 
 function ProductItem() {
-  // const [product, setProduct] = useState();
-  // const [images, setImages] = useState([]);
+  const [product, setProduct] = useState();
+  const [images, setImages] = useState([]);
   const [mainSwiper, setMainSwiper] = useState(null);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const params = useParams();
-  const img = ["/img/fig.jpg", "https://www.nautiljon.com/images/perso/00/66/elizabeth_liones_10866.webp","/img/fig.jpg","/img/fig.jpg","/img/fig.jpg "];
 
   const handleMainSwiperSlideChange = () => {
     if (mainSwiper && thumbsSwiper) {
@@ -31,20 +31,35 @@ function ProductItem() {
     }
   };
 
-  const fetchData = async () => {
-    try {
-      // request await axios ....
-      // setProducts(response.data);
-      // setImages(response.data.images);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   // get products elements from database
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3307/product/${params.id}`);
+        setProduct(response.data[0]);
+        const response2 = await axios.get(`http://localhost:3307/images/${params.id}`);
+        setImages(JSON.parse(response2.data[0].images));
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    
     fetchData();
-  }, [params]);
+  }, [params.id]);
+
+  if (!product) {
+    return <div>loading...</div>;
+  }
+
+  const path = "https://figsale.s3.fr-par.scw.cloud/images/";
+
+  const imageList = images.map((img, index) => (
+    <SwiperSlide key={index}>
+      <Zoom>
+        <img src={path + img} alt={"z"}/>
+      </Zoom>
+    </SwiperSlide>
+    ));
 
   return (
     <div className='product-item-container'>
@@ -58,13 +73,7 @@ function ProductItem() {
             modules={[Navigation, Pagination, FreeMode]}
             onSlideChange={handleMainSwiperSlideChange}
           >
-            {img.map((img, index) => (
-              <SwiperSlide key={index}>
-                <Zoom>
-                  <img src={img} alt={"z"}/>
-                </Zoom>
-              </SwiperSlide>
-              ))}
+           {imageList}
           </Swiper>
         </div>
 
@@ -78,11 +87,7 @@ function ProductItem() {
             modules={[Navigation, Pagination]}
             onSlideChange={handleThumbsSwiperSlideChange} 
           >
-            {img.map((img, index) => (
-              <SwiperSlide key={index}>
-                <img src={img} alt={"z"}/>
-              </SwiperSlide>
-            ))}
+            {imageList}
           </Swiper>
         </div>
       </div>
@@ -91,39 +96,33 @@ function ProductItem() {
       <div className='product-item-details'>
         <div className='product-item-title'>
           {/* set data from product here */}
-          <h1>Product Title</h1>
+          <h1>{product.title}</h1>
         </div>
         <div className='product-item-price'>
           {/* set data from product here */}
-          <h2>100€</h2>
+          <h2>{product.price}€</h2>
         </div>
 
         <hr className='separator-product-item'/>
 
         <div className='product-item-description'>
           <h3>Description du produit:</h3>
-          {/* set data from product here */}
-          <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-            voluptatum, quibusdam, voluptate, quia voluptas quod quos
-            voluptatibus quae doloribus quidem voluptatem. Quisquam voluptatum,
-      
-          </p>
+          <p>{product.description}</p>
         </div>
         <div className='product-item-characteristic'>
           <span>Licence:&nbsp;</span>
           {/* set data from product here */}
-          <p>One piece</p>
+          <p>{product.licence}</p>
         </div>
         <div className='product-item-characteristic'>
           <span>Taille:&nbsp;</span>
           {/* set data from product here */}
-          <p>30cm</p>
+          <p>{product.size}</p>
         </div>
         <div className='product-item-characteristic'>
           <span>Matière:&nbsp;</span>
           {/* set data from product here */}
-          <p>PVC</p>
+          <p>{product.matter}</p>
         </div>
 
         <hr className='separator-product-item'/>

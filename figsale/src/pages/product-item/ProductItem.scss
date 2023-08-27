@@ -144,6 +144,7 @@
   }
   
   .product-item-main-image {
+    height: 60%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -209,6 +210,7 @@
   }
 
   .product-item-price h2 {
+    font-size: 20px;
     height: 45px;
     width: 100px;
     display: flex;
