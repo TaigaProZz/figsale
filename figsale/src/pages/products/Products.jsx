@@ -7,16 +7,19 @@ import axios from 'axios';
 function Products () {
   const [products, setProducts] = useState([]);
   const [images, setImages] = useState([]);
+  const [licences, setLicences] = useState([]);
+  const [filterLicences, setFilterLicences] = useState('');
   const [sliderValues, setSliderValues] = useState([0, 1000]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // request await axios ....
-        const response = await axios.get(`http://localhost:3307/product/`);
-        const response2 = await axios.get(`http://localhost:3307/images`);
-        setProducts(response.data);
-        setImages(response2.data);
+        const productResponse = await axios.get(`http://localhost:3307/product/`);
+        const imageReponse = await axios.get(`http://localhost:3307/images`);
+        const licenceResponse = await axios.get(`http://localhost:3307/sort/licence`);
+        setProducts(productResponse.data);
+        setImages(imageReponse.data);
+        setLicences(licenceResponse.data);
       } catch (error) {
         console.log(error);
       }
@@ -26,8 +29,8 @@ function Products () {
 
   return (
     <div className="products-container">
-      <Sort sliderValues={sliderValues} setSliderValues={setSliderValues} />
-      <ProductsList products={products} images={images} sliderValues={sliderValues}/>
+      <Sort sliderValues={sliderValues} setSliderValues={setSliderValues} licences={licences} setLicences={setLicences} filteredLicences={filterLicences} setFilteredLicences={setFilterLicences} />
+      <ProductsList products={products} images={images} sliderValues={sliderValues} licences={licences} filteredLicences={filterLicences} setFilteredLicences={setFilterLicences} />
     </div>
   )
 }

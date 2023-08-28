@@ -6,18 +6,23 @@ function ProductsList(props) {
   const products = props.products;
   const images = props.images;
   const sliderValues = props.sliderValues;
+  const filteredLicence = props.filteredLicences;
 
-  const filter = (products) => {
+  // filter products by price and licence
+  const filterProducts = (products) => {
     return products.filter((product) => {
-      return product.price >= sliderValues[0] && product.price <= sliderValues[1];
+      const priceInRange = product.price >= sliderValues[0] && product.price <= sliderValues[1];
+      const licenceMatch = filteredLicence ? product.licence === filteredLicence : true;
+      return priceInRange && licenceMatch;
     });
   }
 
-
+  // open filter menu on mobile
   const openFilter = () => {
     console.log('open filter');
   }
 
+  // get first image of product to display
   const getFirstImage = (product) => {
     const image = images.find((image) => image.product_id === product.id);
     if (image) {
@@ -27,8 +32,9 @@ function ProductsList(props) {
     return null;
   }
 
+  // product list
   const path = "https://figsale.s3.fr-par.scw.cloud/images/";
-  const imageList = filter(products).map((product) => {   
+  const imageList = filterProducts(products).map((product) => {   
     return (
       <Link to={'/products/' + product.id} key={product.id}>
         <div className='products-list-element'>    
@@ -45,6 +51,7 @@ function ProductsList(props) {
     );
   })
   
+  // DONT DISPLAY IF DATA IS NOT LOADED
   if (!products.length || !images.length) {
     return <div>Loading...</div>;
   }

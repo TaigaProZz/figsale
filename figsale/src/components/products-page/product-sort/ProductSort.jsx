@@ -2,16 +2,6 @@ import 'rc-slider/assets/index.css';
 import './ProductSort.scss';
 import Slider from 'rc-slider';
 
-const licence = [
-  "Licence 1",
-  "Licence 2",
-  "Licence 3",
-  "Licence 4",
-  "Licence 5",
-  "Licence 6",
-  "Licence 7",
-];
-
 const size = [
   10,
   20,
@@ -21,11 +11,13 @@ const size = [
   200
 ];
 
-
 function Sort (props) {
   const handleSliderChange = (values) => {
-    console.log(values);
     props.setSliderValues(values);
+  };
+
+  const handleLicenceChange = (event) => {
+    props.setFilteredLicences(event.target.value);
   };
 
   return (
@@ -55,9 +47,10 @@ function Sort (props) {
         <div className='product-sort-licence-container'>
           <h3>Licence</h3>
           <div className='product-sort-licence-select-container'>
-            <select>
-              {licence.map((licence, index) => (
-                <option key={index} value={licence}>{licence}</option>
+            <select defaultValue='' onChange={handleLicenceChange}>
+              <option value=''>Toutes les licences</option>
+              {props.licences.map((licence, index) => (
+                <option key={index} value={licence.licence_name}>{licence.licence_name}</option>
               ))}
             </select>
           </div>

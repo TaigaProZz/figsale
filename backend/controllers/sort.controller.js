@@ -1,15 +1,15 @@
-const feedbackService = require('../services/feedback.service');
+const sortService = require('../services/sort.service');
 const Controller = require('./controller');
 
-class FeedbackController extends Controller
+class SortController extends Controller
 {
   constructor (service) {
     super();
     this.service = service;
   }
 
-  getAll (request, response) {
-    this.service.getAll().then(result => {
+  getLicences (request, response) {
+    this.service.getLicences().then(result => {
       this.setResponse(result, response);
     }).catch(error => {
       console.log(error);
@@ -18,4 +18,4 @@ class FeedbackController extends Controller
   }
 }
 
-module.exports = new FeedbackController(feedbackService);
+module.exports = new SortController(sortService);
