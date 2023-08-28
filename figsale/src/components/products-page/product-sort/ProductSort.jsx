@@ -1,7 +1,6 @@
 import 'rc-slider/assets/index.css';
 import './ProductSort.scss';
 import Slider from 'rc-slider';
-import { useState } from 'react';
 
 const licence = [
   "Licence 1",
@@ -23,12 +22,10 @@ const size = [
 ];
 
 
-function Sort () {
-  const [sliderValues, setSliderValues] = useState([0, 1000]);
-
+function Sort (props) {
   const handleSliderChange = (values) => {
     console.log(values);
-    setSliderValues(values);
+    props.setSliderValues(values);
   };
 
   return (
@@ -42,14 +39,14 @@ function Sort () {
           <div className='product-sort-price-slider-container'>
             <div className='price-slider'>
               <p>
-                {sliderValues.map(value => value + "€").join(' - ')}
+                {props.sliderValues.map(value => value + "€").join(' - ')}
               </p>
               <Slider 
                 range={true}
                 allowCross={false}
                 min={0} 
                 max={1000} 
-                defaultValue={sliderValues} 
+                defaultValue={props.sliderValues} 
                 onChange={handleSliderChange} 
               />
             </div>

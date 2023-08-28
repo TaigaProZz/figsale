@@ -5,6 +5,14 @@ import { Link } from 'react-router-dom';
 function ProductsList(props) {
   const products = props.products;
   const images = props.images;
+  const sliderValues = props.sliderValues;
+
+  const filter = (products) => {
+    return products.filter((product) => {
+      return product.price >= sliderValues[0] && product.price <= sliderValues[1];
+    });
+  }
+
 
   const openFilter = () => {
     console.log('open filter');
@@ -20,7 +28,7 @@ function ProductsList(props) {
   }
 
   const path = "https://figsale.s3.fr-par.scw.cloud/images/";
-  const imageList = products.map((product) => {   
+  const imageList = filter(products).map((product) => {   
     return (
       <Link to={'/products/' + product.id} key={product.id}>
         <div className='products-list-element'>    

@@ -7,14 +7,15 @@ import axios from 'axios';
 function Products () {
   const [products, setProducts] = useState([]);
   const [images, setImages] = useState([]);
+  const [sliderValues, setSliderValues] = useState([0, 1000]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         // request await axios ....
         const response = await axios.get(`http://localhost:3307/product/`);
-        setProducts(response.data);
         const response2 = await axios.get(`http://localhost:3307/images`);
+        setProducts(response.data);
         setImages(response2.data);
       } catch (error) {
         console.log(error);
@@ -25,8 +26,8 @@ function Products () {
 
   return (
     <div className="products-container">
-      <Sort />
-      <ProductsList products={products} images={images}/>
+      <Sort sliderValues={sliderValues} setSliderValues={setSliderValues} />
+      <ProductsList products={products} images={images} sliderValues={sliderValues}/>
     </div>
   )
 }
