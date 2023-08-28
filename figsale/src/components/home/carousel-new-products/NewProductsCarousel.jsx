@@ -6,69 +6,38 @@ import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 import './NewProductsCarousel.scss';
 
-function NewProductCarousel () {
-  const products = [
-    {
-      id: 1,
-      img: 'https://www.nautiljon.com/images/perso/00/66/elizabeth_liones_10866.webp',
-      alt: 'efefe',
-      name: 'zoro',
-      price: 100,
-      label: 1,
-      fav: true
-    },
-    {
-      id: 2,
-      img: '/img/banner.jpg',
-      alt: 'efefe',
-      name: 'zoro',
-      price: 100,
-      label: 1,
-      fav: false
-    },
-    {   
-      id: 3,
-      img: '/img/banner.jpg',
-      alt: 'efefe',
-      name: 'zoro',
-      price: 100,
-      label: 1,
-      fav: true
-    },
-    {
-      id: 4,
-      img: '/img/banner.jpg',
-      alt: 'efefe',
-      name: 'zoro',
-      price: 100,
-      label: 1,
-      fav: false
-    },
-    {
-      id: 5,
-      img: '/img/banner.jpg',
-      alt: 'efefe',
-      name: 'zoro',
-      price: 100,
-      label: 1,
-      fav: true
-    },
-    {
-      id: 6,
-      img: '/img/banner.jpg',
-      alt: 'efefe',
-      name: 'zoro',
-      price: 100,
-      label: 1,
-      fav: false
-    }
+function NewProductCarousel (props) {
+  const products = props.products;
+  const images = props.images;
 
-  ];
+  const getFirstImage = (product) => {
+    const image = images.find((image) => image.product_id === product.id);
+    if (image) {
+      const imageArray = JSON.parse(image.images);
+      return imageArray.length > 0 ? imageArray[0] : null;
+    }
+    return null;
+  }
+
+  const path = "https://figsale.s3.fr-par.scw.cloud/images/";
+  const productList = products.map((product) => {   
+    return (
+      <SwiperSlide key={product.id}>
+      <ProductCard
+        img={path + getFirstImage(product)}
+        alt={product.title}
+        title={product.title}
+        price={product.price}
+        fav={product.fav}
+        availability={product.availability}
+      />
+    </SwiperSlide>
+    );
+  })
 
   return (
     <div className='home-carousel-new-products'>
       <div className='home-carousel-new-products-container'>
-        
         <div className='home-carousel-new-products-swiper'>
           <div className='home-carousel-new-products-title'>
             <h2>Nouveautés</h2>
@@ -77,21 +46,31 @@ function NewProductCarousel () {
           <Swiper
             modules={[Navigation, Pagination]}
             navigation = {true}
-            spaceBetween={10}
-            slidesPerView='auto'
+            spaceBetween={20}
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+              },
+              600: {
+                slidesPerView: 2,
+              },
+              900: {
+                slidesPerView: 3,
+              },
+              1200: {
+                slidesPerView: 4,
+              },
+              1500: {
+                slidesPerView: 5,
+              },
+            }}
           >
-            {products.map((products) => (
-              <SwiperSlide key={products.id}>
-                <ProductCard img={products.img} alt={products.alt} name={products.name} price={products.price} fav={products.fav} label={products.label}/>
-              </SwiperSlide>
-            ))}
-            
+            {productList}
           </Swiper> 
         </div>
       </div>
     </div>
   );
-  
 }
 
 export default NewProductCarousel;

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function ProductsList(props) {
   const products = props.products;
   const images = props.images;
-  
+
   const openFilter = () => {
     console.log('open filter');
   }
@@ -26,11 +26,11 @@ function ProductsList(props) {
         <div className='products-list-element'>    
           <ProductCard
             img={path + getFirstImage(product)}
-            alt={product.alt}
+            alt={product.title}
             title={product.title}
             price={product.price}
             fav={product.fav}
-            label={product.label}
+            availability={product.availability}
           />
         </div>
       </Link>

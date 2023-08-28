@@ -41,7 +41,7 @@ function checkFav (props) {
 }
 
 function checkLabel (props) {
-  switch (props.label) {
+  switch (props.availability) {
     case 0:
       return null;
     case 1:

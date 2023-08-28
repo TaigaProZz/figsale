@@ -25,6 +25,33 @@ class ProductController extends Controller
       this.setError(error, response);
     });
   }
+
+  getNewProducts (request, response) {
+    this.service.getNewProducts().then(result => {
+      this.setResponse(result, response);
+    }).catch(error => {
+      console.log(error);
+      this.setError(error, response);
+    });
+  }
+
+  getPromoProducts (request, response) {
+    this.service.getPromoProducts().then(result => {
+      this.setResponse(result, response);
+    }).catch(error => {
+      console.log(error);
+      this.setError(error, response);
+    });
+  }
+
+  getPreorderProducts (request, response) {
+    this.service.getPreorderProducts().then(result => {
+      this.setResponse(result, response);
+    }).catch(error => {
+      console.log(error);
+      this.setError(error, response);
+    });
+  }
 }
 
 module.exports = new ProductController(productService);

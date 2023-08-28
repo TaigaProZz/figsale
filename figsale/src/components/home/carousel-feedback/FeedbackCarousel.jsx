@@ -7,33 +7,8 @@ import 'swiper/scss/pagination';
 import FeedbackCarouselCard from './card/FeedbackCarouselCard';
 
 
-function FeedbackCarousel () {
-  const feedbacks = [
-    {
-      id: 1,
-      name: 'John Doe',
-      message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam id tincidunt dapibus, velit diam ultricies nunc, nec ultricies nisl nunc eu nisl. Sed euismod, diam id tincidunt dapibus, velit diam ultricies nunc, nec ultricies nisl nunc eu nisl.',
-      stars: 5,
-    },
-    {
-      id: 2,
-      name: 'John Doe',
-      message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam id tincidunt dapibus, velit diam ultricies nunc, nec ultricies nisl nunc eu nisl. Sed euismod, diam id tincidunt dapibus, velit diam ultricies nunc, nec ultricies nisl nunc eu nisl.',
-      stars: 4,
-    },
-    {   
-      id: 3,
-      name: 'John Doe',
-      message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam id tincidunt dapibus, velit diam ultricies nunc, nec ultricies nisl nunc eu nisl. Sed euismod, diam id tincidunt dapibus, velit diam ultricies nunc, nec ultricies nisl nunc eu nisl.',
-      stars: 3,
-    },
-    {
-      id: 4,
-      name: 'John Doe',
-      message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam id tincidunt dapibus, velit diam ultricies nunc, nec ultricies nisl nunc eu nisl. Sed euismod, diam id tincidunt dapibus, velit diam ultricies nunc, nec ultricies nisl nunc eu nisl.',
-      stars: 4,
-    }
-  ];
+function FeedbackCarousel (props) {
+  const feedbacks = props.feedbacks
 
   return (
     <div className='home-carousel-feedback'>

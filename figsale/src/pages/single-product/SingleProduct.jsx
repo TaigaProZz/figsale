@@ -2,7 +2,7 @@ import 'react-medium-image-zoom/dist/styles.css'
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
-import './ProductItem.scss';
+import './SingleProduct.scss';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -10,7 +10,7 @@ import { Navigation, Pagination, FreeMode} from 'swiper/modules';
 import Zoom from 'react-medium-image-zoom'
 import axios from 'axios';
 
-function ProductItem() {
+function SingleProduct() {
   const [product, setProduct] = useState();
   const [images, setImages] = useState([]);
   const [mainSwiper, setMainSwiper] = useState(null);
@@ -142,4 +142,4 @@ function ProductItem() {
   );
 }
 
-export default ProductItem;
+export default SingleProduct;

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Home from './pages/home/Home';
 import NavBar from './components/navbar/NavBar';
 import Products from './pages/products/Products';
-import ProductItem from './pages/product-item/ProductItem';
+import SingleProduct from './pages/single-product/SingleProduct';
 import Contact from './pages/contact/Contact';
 import Footer from './components/footer/Footer';
 import Login from './pages/login/Login';
@@ -32,7 +32,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/products' element={<Products />} />
-        <Route path='/products/:id' element={<ProductItem />} />
+        <Route path='/products/:id' element={<SingleProduct />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/login' element={<Login setUser={setUser}/>} />
         <Route path='/dashboard' element={<Dashboard user={user} setUser={setUser} />} />
