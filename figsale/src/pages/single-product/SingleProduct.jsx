@@ -3,7 +3,7 @@ import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 import './SingleProduct.scss';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, FreeMode} from 'swiper/modules';
@@ -78,17 +78,19 @@ function SingleProduct() {
         </div>
 
         <div className='product-item-sub-images'>
-          <Swiper
-            onSwiper={setThumbsSwiper}
-            spaceBetween={10}
-            slidesPerView={'auto'}
-            navigation = {true}
-            centeredSlides={true}
-            modules={[Navigation, Pagination]}
-            onSlideChange={handleThumbsSwiperSlideChange} 
-          >
-            {imageList}
-          </Swiper>
+          {images.length > 1 ? <Swiper
+              onSwiper={setThumbsSwiper}
+              spaceBetween={10}
+              slidesPerView={'auto'}
+              navigation = {true}
+              centeredSlides={true}
+              modules={[Navigation, Pagination]}
+              onSlideChange={handleThumbsSwiperSlideChange} 
+            >
+              {imageList}
+            </Swiper> 
+            : null 
+          }
         </div>
       </div>
 
@@ -133,8 +135,10 @@ function SingleProduct() {
               TOUTES LES FIGURINES SONT DISPONIBLE SEULEMENT SUR COMMANDE.
             </p>
           </div>
-          <div className='product-item-bottom-contact'>   
+          <div className='product-item-bottom-contact'> 
+          <Link to='/product-contact' state={{product: product}}>
             <button>Contacter nous ici</button> 
+          </Link>
           </div>
         </div>
       </div>

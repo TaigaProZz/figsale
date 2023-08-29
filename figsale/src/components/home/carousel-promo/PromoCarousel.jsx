@@ -5,6 +5,7 @@ import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 import './PromoCarousel.scss';
+import { Link } from 'react-router-dom';
 
 function PromoCarousel (props) {
   const products = props.products;
@@ -23,15 +24,17 @@ function PromoCarousel (props) {
   const productList = products.map((product) => {   
     return (
       <SwiperSlide key={product.id}>
-       <ProductCard
-        img={path + getFirstImage(product)}
-        alt={product.title}
-        title={product.title}
-        price={product.price}
-        fav={product.fav}
-        availability={product.availability}
-      />
-    </SwiperSlide>
+        <Link to={'/products/' + product.id} key={product.id}>
+          <ProductCard
+          img={path + getFirstImage(product)}
+          alt={product.title}
+          title={product.title}
+          price={product.price}
+          fav={product.fav}
+          availability={product.availability}
+          />
+        </Link>
+      </SwiperSlide>
     );
   })
 

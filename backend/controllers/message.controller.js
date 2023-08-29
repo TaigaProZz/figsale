@@ -17,14 +17,14 @@ class MessageController extends Controller
     });
   }
 
-  // getById (request, response) {
-  //   this.service.getById(request.params.id).then(result => {
-  //     this.setResponse(result, response);
-  //   }).catch(error => {
-  //     console.log(error);
-  //     this.setError(error, response);
-  //   });
-  // }
+  send (request, response) {
+    this.service.send(request.body).then(result => {
+      this.setResponse(result, response);
+    }).catch(error => {
+      console.log(error);
+      this.setError(error, response);
+    });
+  }
 }
 
 module.exports = new MessageController(messageService);

@@ -10,6 +10,10 @@ class ConversationService {
   getAllById(email) {
     return this.query('SELECT * FROM conversations WHERE creator_id = ? ORDER BY last_activity', [email]);
   }   
+
+  create(conversation) {
+    return this.query('INSERT INTO conversations SET ?', [conversation]);
+  }
 }
 
 module.exports = new ConversationService();

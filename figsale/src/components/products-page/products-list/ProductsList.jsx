@@ -36,8 +36,8 @@ function ProductsList(props) {
   const path = "https://figsale.s3.fr-par.scw.cloud/images/";
   const imageList = filterProducts(products).map((product) => {   
     return (
-      <Link to={'/products/' + product.id} key={product.id}>
-        <div className='products-list-element'>    
+      <div className='products-list-element' key={product.id}>  
+        <Link to={'/products/' + product.id}>  
           <ProductCard
             img={path + getFirstImage(product)}
             alt={product.title}
@@ -46,8 +46,8 @@ function ProductsList(props) {
             fav={product.fav}
             availability={product.availability}
           />
-        </div>
-      </Link>
+        </Link>
+      </div>
     );
   })
   

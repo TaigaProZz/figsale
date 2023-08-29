@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Contact.scss';
 
-function Contact () {
+function Contact (props) {
   const [formData, setFormData] = useState({name: "", email: "", message: "", subject: ""});
 
   const handleChange = (event) => {
@@ -11,9 +11,9 @@ function Contact () {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`Name: ${formData.name}, Email: ${formData.email}, Sujet: ${formData.subject}, Message: ${formData.message}`
-    );
+    alert(`Name: ${formData.name}, Email: ${formData.email}, Sujet: ${formData.subject}, Message: ${formData.message}`);
   };
+  
   return (
     <div className='contact-container'>
       <div className='contact-header'>

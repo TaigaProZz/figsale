@@ -16,6 +16,15 @@ class ConversationController extends Controller
       this.setError(error, response);
     });
   }
+
+  create (request, response) {
+    this.service.create(request.body).then(result => {
+      this.setResponse(result, response);
+    }).catch(error => {
+      console.log(error);
+      this.setError(error, response);
+    });
+  }
 }
 
 module.exports = new ConversationController(conversationService);
