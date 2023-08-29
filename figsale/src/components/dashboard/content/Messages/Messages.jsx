@@ -1,6 +1,5 @@
 function Messages (props) {
   const conversations = props.conversations;
-  console.log(props);
 
   const handleClick = (conversation) => {
     console.log(conversation);

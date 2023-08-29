@@ -12,12 +12,15 @@ function Dashboard(user) {
   const [selectedMenuItem, setSelectedMenuItem] = useState('');
   const [isAdmin, setIsAdmin] = useState(false);
   const [conversations, setConversations] = useState([]);
+  const [favorite, setFavorite] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3307/conversation/${user.user.email}`);
-        setConversations(response.data);
+        const conversationResponse = await axios.get(`http://localhost:3307/conversation/${user.user.id}`);
+        const favoriteResponse = await axios.get(`http://localhost:3307/favorite/${user.user.id}`);
+        setConversations(conversationResponse.data);
+        setFavorite(favoriteResponse.data);
       } catch (error) {
         console.log(error);
       }
@@ -42,7 +45,7 @@ function Dashboard(user) {
     },
     'FAVORITE': {
       name: 'Mes favoris',
-      component : <Favorite />,
+      component : <Favorite favorites={favorite}/>,
       isAdmin: false
     },
     'ADMIN_MESSAGE': {

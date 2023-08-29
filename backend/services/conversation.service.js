@@ -8,7 +8,7 @@ class ConversationService {
   }
 
   getAllById(email) {
-    return this.query('SELECT * FROM conversations WHERE email_creator = ? ORDER BY last_activity', [email]);
+    return this.query('SELECT * FROM conversations WHERE creator_id = ? ORDER BY last_activity', [email]);
   }   
 }
 

@@ -11,12 +11,11 @@ import Login from './pages/login/Login';
 import Dashboard from './pages/dashboard/Dashboard';
 
 function App() {
-  const [user, setUser] = useState({email: '', isAdmin: false});
+  const [user, setUser] = useState({id: 0, email: '', isAdmin: false});
 
   const getUser = () => {
     try {
-      const us = {email: 'fzf@gmail.com', isAdmin: true};
-      setUser(us);
+      setUser({id: 1, email: 'fzf@gmail.com', isAdmin: true});
     } catch (error) {
       console.log('error getting user: ', error);
     }

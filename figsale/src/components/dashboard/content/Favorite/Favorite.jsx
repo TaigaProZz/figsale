@@ -1,30 +1,5 @@
-function Favorite () {
-  const favorite = [
-    {
-      id: 1,
-      productName: 'Produit 1',
-      productId: 1,
-      productImg: 'img/user.png',
-      addDate: '01/01/2021',
-      isFav: 0,
-    },
-    {
-      id: 2,
-      productName: 'Produit 1',
-      productId: 1,
-      productImg: 'img/user.png',
-      addDate: '01/01/2021',
-      isFav: 1,
-    },
-    {
-      id: 3,
-      productName: 'Produit 1',
-      productId: 1,
-      productImg: 'img/user.png',
-      addDate: '01/01/2021',
-      isFav: 1,
-    },
-  ]
+function Favorite (props) {
+  const favorite = props.favorites;
 
   const handleClick = (favorite) => {
     console.log(favorite);
