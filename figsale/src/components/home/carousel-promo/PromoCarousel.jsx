@@ -35,7 +35,6 @@ function PromoCarousel (props) {
     );
   })
 
-
   return (
     <div className='home-carousel-promo'>
       <div className='home-carousel-promo-container'>
@@ -47,7 +46,7 @@ function PromoCarousel (props) {
           <Swiper
             modules={[Navigation, Pagination]}
             navigation = {true}
-            spaceBetween={10}
+            spaceBetween={30}
             breakpoints={{
               0: {
                 slidesPerView: 1,

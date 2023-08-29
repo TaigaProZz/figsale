@@ -6,12 +6,25 @@ import Favorite from '../../components/dashboard/content/Favorite/Favorite';
 import AdminMessage from '../../components/dashboard/content/Admin/Messages/Messages';
 import AdminProducts from '../../components/dashboard/content/Admin/Products/Products';
 import AdminUsers from '../../components/dashboard/content/Admin/Users/Users';
+import axios from 'axios';
 
 function Dashboard(user) {
   const [selectedMenuItem, setSelectedMenuItem] = useState('');
   const [isAdmin, setIsAdmin] = useState(false);
+  const [conversations, setConversations] = useState([]);
 
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3307/conversation/${user.user.email}`);
+        setConversations(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
+
     setSelectedMenuItem(<Account user={user}/>);
     setIsAdmin(user.user.isAdmin);
   }, [user]);
@@ -24,7 +37,7 @@ function Dashboard(user) {
     },
     'MESSAGES': {
       name: 'Mes messages',
-      component : <Messages />,
+      component : <Messages conversations={conversations}/>,
       isAdmin: false
     },
     'FAVORITE': {

@@ -46,7 +46,7 @@ function NewProductCarousel (props) {
           <Swiper
             modules={[Navigation, Pagination]}
             navigation = {true}
-            spaceBetween={20}
+            spaceBetween={30}
             breakpoints={{
               0: {
                 slidesPerView: 1,

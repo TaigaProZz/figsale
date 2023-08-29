@@ -47,7 +47,7 @@ function PreorderCarousel (props) {
           <Swiper
             modules={[Navigation, Pagination]}
             navigation = {true}
-            spaceBetween={10}
+            spaceBetween={30}
             breakpoints={{
               0: {
                 slidesPerView: 1,

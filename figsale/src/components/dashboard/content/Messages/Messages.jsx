@@ -1,51 +1,9 @@
-function Messages () {
-  const message = [
-    {
-      id: 1,
-      productId: 1,
-      subject: 'ub long sujet pour tester la taille du tablau',
-      lastUpdate: '01/01/2021',
-      status: '2',
-    },
-    {
-      id: 2,
-      productId: 1,
-      subject: 'ub long sujet pour tester la taille du tablau',
-      lastUpdate: '01/01/2021',
-      status: '2',
-    },
-    {
-      id: 3,
-      productId: 1,
-      subject: 'ub long sujet pour tester la taille du tablau',
-      lastUpdate: '01/01/2021',
-      status: '2',
-    },
-    {
-      id: 4,
-      productId: 1,
-      subject: 'ub long sujet pour tester la taille du tablau',
-      lastUpdate: '01/01/2021',
-      status: '2',
-    },
-    {
-      id: 5,
-      productId: 1,
-      subject: 'ub long sujet pour tester la taille du tablau',
-      lastUpdate: '01/01/2021',
-      status: '2',
-    },
-    {
-      id: 6,
-      productId: 1,
-      subject: 'ub long sujet pour tester la taille du tablau',
-      lastUpdate: '01/01/2021',
-      status: '2',
-    },
-  ]
+function Messages (props) {
+  const conversations = props.conversations;
+  console.log(props);
 
-  const handleClick = (message) => {
-    console.log(message);
+  const handleClick = (conversation) => {
+    console.log(conversation);
   };
 
   return (
@@ -60,13 +18,13 @@ function Messages () {
         </tr>
       </thead>
       <tbody>
-        {message.map((message) => {
+        {conversations.map((conversation) => {
           return (
-            <tr key={message.id} onClick={() => handleClick(message)}>
-              <td>{message.subject}</td>
-              <td>{message.id}</td>
-              <td>{message.lastUpdate}</td>
-              <td>{displayStatus(message.status)}</td>
+            <tr key={conversation.id} onClick={() => handleClick(conversation)}>
+              <td>{conversation.subject}</td>
+              <td>{conversation.id}</td>
+              <td>{conversation.last_activity}</td>
+              <td>{displayStatus(conversation.status)}</td>
             </tr>
           );
         })}
@@ -78,11 +36,11 @@ function Messages () {
 
 function displayStatus(status) {
   switch (status) {
-    case '1':
+    case 1:
       return 'En attente';
-    case '2':
+    case 2:
       return 'En cours';
-    case '3':
+    case 3:
       return 'Résolu';
     default:
       return null;
