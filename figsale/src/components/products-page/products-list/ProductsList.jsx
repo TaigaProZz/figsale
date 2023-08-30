@@ -27,19 +27,18 @@ function ProductsList(props) {
     const image = images.find((image) => image.product_id === product.id);
     if (image) {
       const imageArray = JSON.parse(image.images);
-      return imageArray.length > 0 ? imageArray[0] : null;
+      return imageArray.length > 0 ? "https://figsale.s3.fr-par.scw.cloud/images/" + imageArray[0] : null;
     }
     return null;
   }
 
   // product list
-  const path = "https://figsale.s3.fr-par.scw.cloud/images/";
   const imageList = filterProducts(products).map((product) => {   
     return (
       <div className='products-list-element' key={product.id}>  
         <Link to={'/products/' + product.id}>  
           <ProductCard
-            img={path + getFirstImage(product)}
+            img={getFirstImage(product)}
             alt={product.title}
             title={product.title}
             price={product.price}

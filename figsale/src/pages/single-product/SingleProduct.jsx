@@ -51,12 +51,10 @@ function SingleProduct() {
     return <div>loading...</div>;
   }
 
-  const path = "https://figsale.s3.fr-par.scw.cloud/images/";
-
   const imageList = images.map((img, index) => (
     <SwiperSlide key={index}>
       <Zoom>
-        <img src={path + img} alt={"z"}/>
+        <img src={"https://figsale.s3.fr-par.scw.cloud/images/" + img} alt={"load error"}/>
       </Zoom>
     </SwiperSlide>
     ));

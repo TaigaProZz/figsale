@@ -123,3 +123,20 @@ table tr:nth-child(odd) td{
 table tr:nth-child(even) td{
   background-color: rgb(236, 236, 236);
 }
+
+.dashboard-favorite-product {
+  td {
+    height: 150px;
+    font-size: 20px;
+    img {
+      height: 100%;
+      width: 50%;
+      object-fit: contain;
+    }
+  }
+}
+
+.popup-delete-favorite {
+  color: aquamarine;
+  background-color: yellow;
+}

@@ -45,7 +45,7 @@ function Dashboard(user) {
     },
     'FAVORITE': {
       name: 'Mes favoris',
-      component : <Favorite favorites={favorite}/>,
+      component : <Favorite favorite={favorite} setFavorite={setFavorite}/>,
       isAdmin: false
     },
     'ADMIN_MESSAGE': {
