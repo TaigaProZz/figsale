@@ -1,0 +1,21 @@
+.message-box {
+  padding: 10px;
+  border-radius: 8px;
+  min-height: 20px;
+  height: auto;
+  max-width: 70%;
+  overflow-wrap: break-word;
+}
+
+.dashboard-recipient-message-box-container {
+  float: left;
+  background-color: #f1f1f1;
+  max-width: 70%;
+}
+
+.dashboard-user-message-box-container {
+  float: right;
+  background-color: #007bff;
+  color: white;
+  max-width: 70%;
+}

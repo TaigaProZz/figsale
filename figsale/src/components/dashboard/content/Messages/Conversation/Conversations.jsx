@@ -1,8 +1,9 @@
-function Messages (props) {
-  const conversations = props.conversations;
+import Messages from '../Message/Messages';
 
+function Conversations (props) {
+  const conversations = props.conversations;
   const handleClick = (conversation) => {
-    console.log(conversation);
+    props.setSelectedMenuItem(<Messages conversation={conversation} user={props.user}/>)
   };
 
   return (
@@ -21,7 +22,7 @@ function Messages (props) {
           return (
             <tr key={conversation.id} onClick={() => handleClick(conversation)}>
               <td>{conversation.subject}</td>
-              <td>{conversation.id}</td>
+              <td>{conversation.conversation_id}</td>
               <td>{conversation.last_activity}</td>
               <td>{displayStatus(conversation.status)}</td>
             </tr>
@@ -46,4 +47,4 @@ function displayStatus(status) {
   }
 }
 
-export default Messages;
+export default Conversations;

@@ -23,6 +23,11 @@ html, body {
   background-color: $background-color;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
 a {
   text-decoration: none;
   color: $font-color-bar;

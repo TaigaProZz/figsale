@@ -9,7 +9,7 @@ class MessageController extends Controller
   }
 
   getAllById (request, response) {
-    this.service.getAllById().then(result => {
+    this.service.getAllById(request.params.id).then(result => {
       this.setResponse(result, response);
     }).catch(error => {
       console.log(error);

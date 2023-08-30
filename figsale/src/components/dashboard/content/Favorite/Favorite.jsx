@@ -19,7 +19,7 @@ function Favorite (props) {
           {favorite.map((favorite) => {
             return (
               <tr key={favorite.id} onClick={() => handleClick(favorite)}>
-                <td><img src={favorite.productImg} alt={favorite.productName}></img></td>
+                <td>{favorite.product_id}</td>
                 <td>{favorite.addDate}</td>
                 <td>{favorite.isFav ? <p>oui</p> : <p>non</p>}</td>
               </tr>

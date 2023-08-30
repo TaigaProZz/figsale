@@ -1,7 +1,7 @@
 import './Dashboard.scss';
 import React, { useEffect, useState } from 'react';
 import Account from '../../components/dashboard/content/Account/Account';
-import Messages from '../../components/dashboard/content/Messages/Messages';
+import Conversations from '../../components/dashboard/content/Messages/Conversation/Conversations';
 import Favorite from '../../components/dashboard/content/Favorite/Favorite';
 import AdminMessage from '../../components/dashboard/content/Admin/Messages/Messages';
 import AdminProducts from '../../components/dashboard/content/Admin/Products/Products';
@@ -29,7 +29,7 @@ function Dashboard(user) {
     fetchData();
 
     setSelectedMenuItem(<Account user={user}/>);
-    setIsAdmin(user.user.isAdmin);
+    setIsAdmin(user.user.grade);
   }, [user]);
 
   const MENU_ITEMS = {
@@ -38,9 +38,9 @@ function Dashboard(user) {
       component : <Account user={user}/>,
       isAdmin: false  
     },
-    'MESSAGES': {
+    'CONVERSATION': {
       name: 'Mes messages',
-      component : <Messages conversations={conversations}/>,
+      component : <Conversations conversations={conversations} selectedMenuItem={selectedMenuItem} setSelectedMenuItem={setSelectedMenuItem} user={user}/>,
       isAdmin: false
     },
     'FAVORITE': {
