@@ -1,11 +1,13 @@
 import axios from "axios";
 import { useState } from "react";
 import { FaTrashAlt } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 
 function Favorite (props) {
   const [fav, setFav] = useState(props.favorite);
+  const navigate = useNavigate();
 
   // get first image of product to display
   const getFirstImage = (product) => {
@@ -17,7 +19,7 @@ function Favorite (props) {
   }
 
   const handleClick = (favorite) => {
-    console.log(favorite);
+    navigate('/products/' + favorite.id)
   };
 
   const handleDelete = async (item) => {
@@ -49,14 +51,18 @@ function Favorite (props) {
                 <td onClick={() => handleClick(favorite)}>
                   <img src={getFirstImage(favorite)} alt={favorite.title} />
                 </td>
-                <td onClick={() => handleClick(favorite)}>{favorite.title}</td>
+                <td onClick={() => handleClick(favorite)}>
+                  <p style={{fontWeight: '700'}}>Nom: {favorite.title} <br /></p>
+                  Prix: {favorite.price}€ <br />
+                  Taille: {favorite.size} cm
+                </td>
                 <td>
                 <Popup 
-                  contentStyle={{width: "200px", padding: "20px", backgroundColor: "#f5f5f5", cursor: "pointer"}}
-                  trigger= {<div><FaTrashAlt /></div>} 
+                  contentStyle={{width: "100px", padding: "15px", backgroundColor: "#F3F3F3", color: "red", fontWeight: "700", cursor: "pointer"}}
+                  trigger= {<div><FaTrashAlt color="red" /></div>} 
                   position="left center">
                   {/*   popup content  */}  
-                  <div onClick={() => handleDelete(favorite)}>Confirmer la suppression du favori</div>
+                  <div onClick={() => handleDelete(favorite)}>Supprimer des favoris</div>
                 </Popup>
                 </td>
               </tr>
