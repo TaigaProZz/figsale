@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
 import './ProductContact.scss';
+import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -29,7 +29,6 @@ function Contact (user) {
   };
 
   const sendData = async () => {
-    console.log(formData);
     try {
       const conversationId = Date.now();
       await axios.put('http://localhost:3307/message', {conversation_id: conversationId, send_date: Date(), message_content: formData.message});
@@ -68,7 +67,6 @@ function Contact (user) {
 
           <button type="submit" onClick={handleSubmit}>Envoyer</button> 
         </div>
-        
       </form>
     </div>
   )

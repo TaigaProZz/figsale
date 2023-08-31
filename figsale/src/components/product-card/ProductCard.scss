@@ -62,14 +62,8 @@
   }
 }
 
-.product-card-fav {
-  height: 10%;
-  width: 90%;
-  display: flex;
-  justify-content: flex-end;
-}
-
 .product-card-image {
+  margin-top: 25px;
   img {
     height: 150px;
     width: 150px;

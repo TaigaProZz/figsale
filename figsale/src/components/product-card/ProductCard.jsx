@@ -1,5 +1,4 @@
 import './ProductCard.scss'
-import {HiOutlineHeart, HiHeart} from 'react-icons/hi'
 
 function ProductCard (props) {
   return (
@@ -9,10 +8,6 @@ function ProductCard (props) {
           <p className='center'>{checkLabel(props)}</p>
         </div> 
       : null}
-
-      <div className='product-card-fav'>
-        {checkFav(props)}
-      </div>
 
       <div className="product-card-image">
         {<img src={props.img} alt={props.alt}></img> }
@@ -30,14 +25,6 @@ function ProductCard (props) {
       </div>
     </div>
   )
-}
-
-function checkFav (props) {
-  if (props.fav === true) {
-    return <HiHeart size={30} color='red'/>
-  } else {
-    return <HiOutlineHeart size={30}/>
-  }
 }
 
 function checkLabel (props) {
