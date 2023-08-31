@@ -28,7 +28,6 @@ class FavoriteController extends Controller
 
   getSingleFavorite (request, response) {
     this.service.getSingleFavorite(request.params.id, request.params.product_id).then(result => {
-      console.log(request);
       this.setResponse(result, response);
     }).catch(error => {
       console.log(error);

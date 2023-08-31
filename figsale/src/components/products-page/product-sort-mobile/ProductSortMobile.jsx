@@ -1,5 +1,5 @@
 import 'rc-slider/assets/index.css';
-import './ProductSort.scss';
+import './ProductSortMobile.scss';
 import Slider from 'rc-slider';
 
 const size = [
@@ -11,7 +11,7 @@ const size = [
   200
 ];
 
-function Sort (props) {
+function SortMobile (props) {
   const handleSliderChange = (values) => {
     props.setSliderValues(values);
   };
@@ -21,15 +21,15 @@ function Sort (props) {
   };
 
   return (
-    <div className='product-sort-container'>
-      <div className='product-sort-shape'>
-        <div className='product-sort-shape-title'>
+    <div className='product-sort-container-mobile'>
+      <div className='product-sort-shape-mobile'>
+        <div className='product-sort-shape-title-mobile'>
           <h2>Trier par</h2>
         </div>
-        <div className='product-sort-price-container'>
+        <div className='product-sort-price-container-mobile'>
           <h3>Prix</h3>
-          <div className='product-sort-price-slider-container'>
-            <div className='price-slider'>
+          <div className='product-sort-price-slider-container-mobile'>
+            <div className='price-slider-mobile'>
               <p>
                 {props.sliderValues.map(value => value + "€").join(' - ')}
               </p>
@@ -44,9 +44,9 @@ function Sort (props) {
             </div>
           </div>
         </div>
-        <div className='product-sort-licence-container'>
+        <div className='product-sort-licence-container-mobile'>
           <h3>Licence</h3>
-          <div className='product-sort-licence-select-container'>
+          <div className='product-sort-licence-select-container-mobile'>
             <select defaultValue={props.licence} onChange={handleLicenceChange}>
               <option value=''>Toutes les licences</option>
               {props.licences.map((licence, index) => (
@@ -55,9 +55,9 @@ function Sort (props) {
             </select>
           </div>
         </div>
-        <div className='product-sort-size-container'>
+        <div className='product-sort-size-container-mobile'>
           <h3>Taille</h3>
-          <div className='product-sort-size-select-container'>
+          <div className='product-sort-size-select-container-mobile'>
             <select>
               {size.map((size, index) => (
                 <option key={index} value={size}>{size}</option>
@@ -70,4 +70,4 @@ function Sort (props) {
   )
 }
 
-export default Sort;
+export default SortMobile;

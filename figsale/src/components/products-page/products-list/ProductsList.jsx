@@ -1,6 +1,7 @@
 import './ProductsList.scss';
 import ProductCard from '../../product-card/ProductCard';
 import { Link } from 'react-router-dom';
+import SortMobile from '../product-sort-mobile/ProductSortMobile';
 
 function ProductsList(props) {
   const products = props.products;
@@ -19,7 +20,12 @@ function ProductsList(props) {
 
   // open filter menu on mobile
   const openFilter = () => {
-    console.log('open filter');
+    const element = document.getElementsByClassName('product-sort-container-mobile')[0];
+    if (element.classList.contains('display-block')) {
+      element.classList.remove('display-block');
+      return;
+    }
+    element.classList.toggle('display-block');
   }
 
   // get first image of product to display
@@ -31,6 +37,8 @@ function ProductsList(props) {
     }
     return null;
   }
+
+
 
   // product list
   const imageList = filterProducts(products).map((product) => {   
@@ -56,11 +64,20 @@ function ProductsList(props) {
   }
 
   return (
+    
     <div className='products-list-container'>
       <div className='products-list-header'>
         <h1>Produits</h1>
         <p>{products.length} éléments</p>
         <button className='products-list-header-btn' onClick={openFilter}>Filtrer</button>
+        <SortMobile 
+          sliderValues={props.sliderValues}
+          licences={props.licences}
+          filteredLicences={props.filteredLicences}
+          setFilteredLicences={props.setFilteredLicences}
+          setSliderValues={props.setSliderValues} 
+        />
+
       </div>
       <div className='products-list-content'>
         {imageList}

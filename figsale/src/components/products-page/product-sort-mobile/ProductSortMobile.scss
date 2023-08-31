@@ -1,0 +1,100 @@
+@use 'src/App.scss' as app;
+
+@media screen and (max-width: 949px) {
+  .product-sort-container-mobile {
+    width: 98%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  .display-block-mobile {
+    display: block;
+  }
+  
+  .product-sort-shape-mobile {
+    width: 100%;
+    height: 500px;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    background-color: app.$bar-color;
+    color: app.$font-color-bar;
+  }
+
+  .product-sort-shape-title-mobile {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .product-sort-price-container-mobile {
+    height: 15%;
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-sort-price-slider-container-mobile {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    p {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .product-sort-licence-container-mobile {
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-sort-licence-select-container-mobile {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    select {
+      width: 80%;
+      height: 25px;
+    }
+  }
+
+  .product-sort-size-container-mobile {
+    height: 15%;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-sort-size-select-container-mobile {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    select {
+      width: 80%;
+      height: 25px;
+    }
+  }
+
+  .price-slider-mobile {
+    width: 80%;
+    height: 10%;
+  }
+
+  .slider-selection-mobile {
+    width: 20px;
+    height: 10%;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  .product-sort-container-mobile {
+   display: none;
+  }
+}

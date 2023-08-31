@@ -53,7 +53,6 @@ function SingleProduct(user) {
 
   const handleFav = async (product) => {
     // post or delete depending on fav value
-    console.log(fav);
     if (fav) {
       try {
         setFav(!fav);

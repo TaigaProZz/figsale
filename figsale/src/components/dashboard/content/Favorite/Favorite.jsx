@@ -8,7 +8,6 @@ import 'reactjs-popup/dist/index.css';
 function Favorite (props) {
   const [fav, setFav] = useState(props.favorite);
   const navigate = useNavigate();
-  console.log(props);
 
   // get first image of product to display
   const getFirstImage = (product) => {

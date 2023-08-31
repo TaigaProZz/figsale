@@ -2,17 +2,21 @@
 
 @media screen and (max-width: 949px) {
   .product-sort-container {
-    width: 30%;
+    width: 100%;
     display: none;
-    position: absolute;
+    top: 300px;
     justify-content: center;
     align-items: center;
-    background-color: bisque;
+  }
+  .display-block {
+    display: block;
   }
   
   .product-sort-shape {
-    width: 90%;
+    width: 100%;
     height: 500px;
+    margin-left: 3px;
+    border-radius: 7px;
     display: flex;
     flex-direction: column;
     background-color: app.$bar-color;
@@ -21,9 +25,72 @@
 
   .product-sort-shape-title {
     height: 10%;
+    display: flex;
+    justify-content: center;
   }
-  
-  .product-sort-shape-price {
+
+  .product-sort-price-container {
+    height: 15%;
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-sort-price-slider-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    p {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .product-sort-licence-container {
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-sort-licence-select-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    select {
+      width: 80%;
+      height: 25px;
+    }
+  }
+
+  .product-sort-size-container {
+    height: 15%;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-sort-size-select-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    select {
+      width: 80%;
+      height: 25px;
+    }
+  }
+
+  .price-slider {
+    width: 80%;
+    height: 10%;
+  }
+
+  .slider-selection {
+    width: 20px;
     height: 10%;
   }
 }
