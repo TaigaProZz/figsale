@@ -35,17 +35,17 @@ function Dashboard(user) {
   const MENU_ITEMS = {
     'ACCOUNT': {
       name: 'Mon compte',
-      component : <Account user={user}/>,
+      component : <Account user={user} />,
       isAdmin: false  
     },
     'CONVERSATION': {
       name: 'Mes messages',
-      component : <Conversations conversations={conversations} selectedMenuItem={selectedMenuItem} setSelectedMenuItem={setSelectedMenuItem} user={user}/>,
+      component : <Conversations conversations={conversations} selectedMenuItem={selectedMenuItem} setSelectedMenuItem={setSelectedMenuItem} user={user} />,
       isAdmin: false
     },
     'FAVORITE': {
       name: 'Mes favoris',
-      component : <Favorite favorite={favorite} setFavorite={setFavorite}/>,
+      component : <Favorite favorite={favorite} setFavorite={setFavorite} user={user} />,
       isAdmin: false
     },
     'ADMIN_MESSAGE': {

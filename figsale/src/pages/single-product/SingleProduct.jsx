@@ -3,6 +3,7 @@ import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 import './SingleProduct.scss';
+import {HiOutlineHeart, HiHeart} from 'react-icons/hi'
 import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -10,11 +11,12 @@ import { Navigation, Pagination, FreeMode} from 'swiper/modules';
 import Zoom from 'react-medium-image-zoom'
 import axios from 'axios';
 
-function SingleProduct() {
+function SingleProduct(user) {
   const [product, setProduct] = useState();
   const [images, setImages] = useState([]);
   const [mainSwiper, setMainSwiper] = useState(null);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [fav, setFav] = useState('');
   const params = useParams();
 
   const handleMainSwiperSlideChange = () => {
@@ -39,14 +41,38 @@ function SingleProduct() {
         setProduct(response.data[0]);
         const response2 = await axios.get(`http://localhost:3307/images/${params.id}`);
         setImages(JSON.parse(response2.data[0].images));
+        const response3 = await axios.get(`http://localhost:3307/favorite/${user.user.id}/${params.id}`);
+        setFav(response3.data);        
       } catch (error) {
         console.log(error);
       }
     };
     
     fetchData();
-  }, [params.id]);
+  }, [user, params.id]);
 
+  const handleFav = async (product) => {
+    // post or delete depending on fav value
+    console.log(fav);
+    if (fav) {
+      try {
+        setFav(!fav);
+        await axios.delete(`http://localhost:3307/favorite/${user.user.id}/${product.id}`);
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      try {
+        setFav(!fav);
+        const query = {creator_id: user.user.id, product_id: product.id, add_date: Date().toString()};
+        await axios.post(`http://localhost:3307/favorite/`, query);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
+
+  // view
   if (!product) {
     return <div>loading...</div>;
   }
@@ -76,7 +102,8 @@ function SingleProduct() {
         </div>
 
         <div className='product-item-sub-images'>
-          {images.length > 1 ? <Swiper
+          {images.length > 1 ? 
+            <Swiper
               onSwiper={setThumbsSwiper}
               spaceBetween={10}
               slidesPerView={'auto'}
@@ -95,14 +122,13 @@ function SingleProduct() {
       {/* product details */}
       <div className='product-item-details'>
         <div className='product-item-title'>
-          {/* set data from product here */}
           <h1>{product.title}</h1>
         </div>
         <div className='product-item-price'>
-          {/* set data from product here */}
           <h2>{product.price}€</h2>
+          <div onClick={() => handleFav(product)}>{checkFav(fav)}</div>
         </div>
-
+          
         <hr className='separator-product-item'/>
 
         <div className='product-item-description'>
@@ -111,17 +137,14 @@ function SingleProduct() {
         </div>
         <div className='product-item-characteristic'>
           <span>Licence:&nbsp;</span>
-          {/* set data from product here */}
           <p>{product.licence}</p>
         </div>
         <div className='product-item-characteristic'>
           <span>Taille:&nbsp;</span>
-          {/* set data from product here */}
           <p>{product.size}</p>
         </div>
         <div className='product-item-characteristic'>
           <span>Matière:&nbsp;</span>
-          {/* set data from product here */}
           <p>{product.matter}</p>
         </div>
 
@@ -142,6 +165,14 @@ function SingleProduct() {
       </div>
     </div>
   );
+}
+
+function checkFav (fav) {
+  if (fav) {
+    return <HiHeart size={40} color='red'/>
+  } else {
+    return <HiOutlineHeart size={40}/>
+  }
 }
 
 export default SingleProduct;

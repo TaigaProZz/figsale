@@ -8,6 +8,7 @@ import 'reactjs-popup/dist/index.css';
 function Favorite (props) {
   const [fav, setFav] = useState(props.favorite);
   const navigate = useNavigate();
+  console.log(props);
 
   // get first image of product to display
   const getFirstImage = (product) => {
@@ -28,7 +29,7 @@ function Favorite (props) {
     if (confirm) {
       // delete product
       try {
-        axios.delete('http://localhost:3307/favorite/' + item.id).then(() => {
+        axios.delete(`http://localhost:3307/favorite/${props.user.user.id}/${item.id}`).then(() => {
           props.setFavorite(prevFavorites => prevFavorites.filter(favorite => favorite.id !== item.id));
           setFav(prevFavorites => prevFavorites.filter(favorite => favorite.id !== item.id));
         }).catch((error) => {

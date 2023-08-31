@@ -26,8 +26,18 @@ class FavoriteController extends Controller
     });
   }
 
+  getSingleFavorite (request, response) {
+    this.service.getSingleFavorite(request.params.id, request.params.product_id).then(result => {
+      console.log(request);
+      this.setResponse(result, response);
+    }).catch(error => {
+      console.log(error);
+      this.setError(error, response);
+    });
+  }
+
   delete (request, response) {
-    this.service.delete(request.params.id).then(result => {
+    this.service.delete(request.params.creator_id, request.params.product_id).then(result => {
       this.setResponse(result, response);
     }).catch(error => {
       console.log(error);
