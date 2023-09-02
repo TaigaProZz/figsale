@@ -8,6 +8,15 @@ class ProductController extends Controller
     this.service = service;
   }
 
+  postProduct (request, response) {
+    this.service.postProduct(request.body, request.files).then(result => {
+      this.setResponse(result, response);
+    }).catch(error => {
+      console.log(error);
+      this.setError(error, response);
+    });
+  }
+
   getAll (request, response) {
     this.service.getAll().then(result => {
       this.setResponse(result, response);

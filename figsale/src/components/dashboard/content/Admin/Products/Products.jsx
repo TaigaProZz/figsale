@@ -127,7 +127,7 @@ function Products() {
             <th>Nom</th>
             <th>Prix</th>
             <th>Statut</th>
-            <th></th>
+            <th><button>Ajouter</button></th>
           </tr>
         </thead>
         <tbody>

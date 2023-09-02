@@ -5,6 +5,7 @@ import Conversations from '../../components/dashboard/content/Messages/Conversat
 import Favorite from '../../components/dashboard/content/Favorite/Favorite';
 import AdminMessage from '../../components/dashboard/content/Admin/Messages/Messages';
 import AdminProducts from '../../components/dashboard/content/Admin/Products/Products';
+import AdminAddProducts from '../../components/dashboard/content/Admin/AddProduct/AddProduct';
 import AdminUsers from '../../components/dashboard/content/Admin/Users/Users';
 import axios from 'axios';
 
@@ -56,6 +57,11 @@ function Dashboard(user) {
     'ADMIN_PRODUCT': {
       name: 'Gestion des produits',
       component : <AdminProducts />,
+      isAdmin: true
+    },
+    'ADMIN_ADD_PRODUCT': {
+      name: 'Ajout de produit',
+      component : <AdminAddProducts />,
       isAdmin: true
     },
     'ADMIN_USER': {

@@ -3,7 +3,6 @@ import ProductsList from '../../components/products-page/products-list/ProductsL
 import Sort from '../../components/products-page/product-sort/ProductSort';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import SortMobile from '../../components/products-page/product-sort-mobile/ProductSortMobile';
 
 function Products () {
   const [products, setProducts] = useState([]);
@@ -30,17 +29,23 @@ function Products () {
 
   return (
     <div className="products-container">
-      <Sort sliderValues={sliderValues} setSliderValues={setSliderValues} licences={licences} setLicences={setLicences} filteredLicences={filterLicences} setFilteredLicences={setFilterLicences} />
-
+      <Sort 
+        sliderValues={sliderValues} 
+        setSliderValues={setSliderValues} 
+        licences={licences} 
+        setLicences={setLicences} 
+        filteredLicences={filterLicences} 
+        setFilteredLicences={setFilterLicences} 
+      />
       <ProductsList 
-      products={products} 
-      images={images} 
-      sliderValues={sliderValues} 
-      licences={licences} 
-      filteredLicences={filterLicences} 
-      setFilteredLicences={setFilterLicences} 
-      setSliderValues={setSliderValues}
-      setLicences={setLicences}
+        products={products} 
+        images={images} 
+        sliderValues={sliderValues} 
+        licences={licences} 
+        filteredLicences={filterLicences} 
+        setFilteredLicences={setFilterLicences} 
+        setSliderValues={setSliderValues}
+        setLicences={setLicences}
       />
     </div>
   )
